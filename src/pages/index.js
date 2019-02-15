@@ -5,6 +5,7 @@ import Layout from '../components/layout'
 import Banner from '../components/Banner'
 
 import pic05 from '../assets/images/pic05.jpg'
+import Carousel from '../components/Carousel';
 
 
 class HomeIndex extends React.Component {
@@ -22,7 +23,7 @@ class HomeIndex extends React.Component {
                 >
                 </Helmet>
 
-                <Banner />
+                <Carousel />
 
                 <div id="main">
                     <section id="two">

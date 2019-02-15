@@ -6,6 +6,7 @@ import Header from './Header'
 import Menu from './Menu'
 import Contact from './Contact'
 import Footer from './Footer'
+import Carousel from './Carousel';
 
 class Layout extends React.Component {
     constructor(props) {
@@ -42,6 +43,7 @@ class Layout extends React.Component {
             <div className={`body ${this.state.loading} ${this.state.isMenuVisible ? 'is-menu-visible' : ''}`}>
                 <div id="wrapper">
                     <Header onToggleMenu={this.handleToggleMenu} />
+                   
                     {children}
                     <Contact />
                     <Footer />
