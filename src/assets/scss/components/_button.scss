@@ -109,9 +109,24 @@
 		}
 
 		&.special {
-			background-color: _palette(fg-bold);
+			background-color:_palette(bg);
 			box-shadow: none;
-			color: _palette(bg);
+			color:_palette(fg-bold); 
+
+			&:hover, &:active {
+				background-color: _palette(highlight);
+				color: _palette(bg) !important;
+			}
+
+			&:active {
+				background-color: desaturate(darken(_palette(highlight), 15), 5);
+			}
+		}
+
+		&.special-2 {
+			background-color:_palette(fg);
+			box-shadow: none;
+			color:_palette(bg); 
 
 			&:hover, &:active {
 				background-color: _palette(highlight);

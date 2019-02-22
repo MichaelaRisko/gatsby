@@ -13,7 +13,6 @@ import pic11 from '../assets/images/pic11.jpg'
 
 
 const About = (props) => (
-    console.log(props),
     <Layout>
         <Helmet>
             <title>About - Forty by HTML5 UP</title>

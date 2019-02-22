@@ -1,15 +1,15 @@
 import React from 'react'
 import { Link } from 'gatsby'
 
-import excelsior from '../assets/images/excelsior.png'
+import logo from '../assets/images/logo.png'
 
 
 const Footer = (props) => (
     <footer id="footer">
         <div className="inner">
     <div>
-    <Link to="/" className="logo"><img src={excelsior} alt="" /></Link>
-                <p>hi@excelsior.com</p>
+    <Link to="/" className="logo"><img src={logo} alt="" /></Link>
+                <p>info@transferrum.com</p>
     </div>
     <div className="footer-reverse">
         <ul className="icons">
@@ -20,7 +20,7 @@ const Footer = (props) => (
                 <li><a href="#" className="icon alt fa-linkedin"><span className="label">LinkedIn</span></a></li>
             </ul>
             <ul className="copyright">
-                <li>Copyright &copy; EXCELSIOR</li><li><a href="https://html5up.net">Design+Code</a></li>
+                <li>Copyright &copy; logo</li><li><a href="https://html5up.net">Design+Code</a></li>
             </ul>
     </div>
     </div>  

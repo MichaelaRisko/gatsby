@@ -61,4 +61,13 @@
 		}
 	}
 
+	.town {
+		@include vendor('background-image', 'url("../images/town_white.png")');
+		background-position: bottom;
+		background-repeat: no-repeat;
+		background-size: contain;
+		padding-bottom: 7rem;
+	}
+
+
 	

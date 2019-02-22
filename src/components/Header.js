@@ -4,7 +4,7 @@ import { Link } from 'gatsby'
 import Scrollspy from 'react-scrollspy'
 import Scroll from './Scroll'
 
-import excelsior from '../assets/images/excelsior.png'
+import logo from '../assets/images/logo.png'
 
 
 class Header extends React.Component {
@@ -12,17 +12,22 @@ class Header extends React.Component {
         super(props)
         this.state = {
             width: 0,
+            color: "",
         }
         this.updateWindowDimensions = this.updateWindowDimensions.bind(this)
+        this.handleScroll = this.handleScroll.bind(this)
     }
 
     componentDidMount() {
+        this.handleScroll();
         this.updateWindowDimensions();
         window.addEventListener('resize', this.updateWindowDimensions);
+        window.addEventListener('scroll', this.handleScroll);
       }
       
       componentWillUnmount() {
         window.removeEventListener('resize', this.updateWindowDimensions);
+        window.removeEventListener('scroll', this.handleScroll);
       }
 
     updateWindowDimensions() {
@@ -31,29 +36,45 @@ class Header extends React.Component {
         })
     }
 
-    returnNavigation () {
-        
+    handleScroll () {
+        if (window.scrollY > 400) {
+            this.setState({color: 'black'})
+          } else {
+            this.setState({color: 'white'})
+          }
     }
 
     render(){
         let navigation;
-     
         
-        if(this.state.width > 600){
+        if(this.state.width > 780){
             navigation =
                 <nav className="scroll-navigation">
     
                 <Scrollspy items={ ['main'] } currentClassName="is-active" offset={-300}>
                 <li>
                     <Scroll type="id" element="main">
-                        <a href="#">Introduction</a>
+                        <a href="#">O nas</a>
+                    </Scroll>
+                </li>
+                <li>
+                    <Scroll type="id" element="products">
+                        <a href="#">produkty</a>
+                    </Scroll>
+                </li>
+                <li>
+                    <Scroll type="id" element="feedback">
+                        <a href="#">referencie</a>
+                    </Scroll>
+                </li>
+                <li>
+                    <Scroll type="id" element="price">
+                        <a href="#">cenova ponuka</a>
                     </Scroll>
                 </li>
    
                 
                 </Scrollspy>
-                <Link to="/about" >o nas</Link>
-                <Link to="/about" >kontakt</Link>
                               
             </nav>
         } else {
@@ -62,10 +83,10 @@ class Header extends React.Component {
            
         </nav>
         }
-     
+     // opravit header podla toho ake fotky pojdu 
         return(
-            <header id="header" className="alt">
-            <Link to="/" className="logo"><img src={excelsior} alt="" /></Link>
+            <header id="header" className={this.state.color === "white" ? "alt" : null}>
+            <Link to="/" className="logo"><img src={logo} alt="" /></Link>
             {navigation}
             
         </header>

@@ -25,12 +25,45 @@
 	}
 
 	.box-row {
-		@include vendor('align-items', 'center');
+		@include vendor('align-items', 'flex-start');
 		@include vendor('justify-content', 'space-between');
 		@include vendor('display', 'flex');	
+		padding: 4rem;
+
+		.circle {
+			padding: 0 5rem;
+			flex-direction: column;
+
+			@include breakpoint(medium) {
+				padding: 0 2.5rem;
+			}
+
+			@include breakpoint(small) {
+				padding: 0  0.5rem;
+			}
+
+			@include breakpoint(xsmall) {
+				padding: 2.5rem 0;
+			}
+
+			p {
+				text-align: center;
+				font-size: 1.5rem;
+			}
+		}
+
+
+
+		@include breakpoint(xsmall) {
+			flex-direction: column;
+
+			.circle p {
+				font-size: 2rem;
+			}
+		}
 	}
 
-	.about {
+	.about a{
 		@include vendor('transition', (
 			'box-shadow #{_duration(transition)} ease-in-out'
 		));
@@ -44,20 +77,35 @@
 		display: flex;
 		align-items: center;
 		border: 0;
-		padding: 2.5rem;
+		padding: 3rem;
+		margin-bottom: _size(element-margin);
 
 		&:hover {
+			color: _palette(fg) !important;
 			box-shadow: rgba(0, 0, 0, 0.11) 0px 15px 30px 0px, rgba(0, 0, 0, 0.08) 0px 5px 15px 0px;
 
 		}
 
 		&:active {
+			color: _palette(fg) !important;
 			box-shadow: rgba(0, 0, 0, 0.11) 0px 15px 30px 0px, rgba(0, 0, 0, 0.08) 0px 5px 15px 0px;
 		}
 
 		img {
 			height: 7rem;
 			width: auto;
-			padding-right: 1.5rem;
+			padding-right: 2rem;
+		}
+
+		p {
+			margin-bottom: 1rem;
+		}
+
+		p:hover {
+			color: _palette(fg) !important;
+		}
+
+		p:active {
+			color: _palette(fg) !important;
 		}
 	}

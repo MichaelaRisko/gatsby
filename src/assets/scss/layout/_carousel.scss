@@ -4,25 +4,18 @@
 /// Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 ///
 
-/* Banner */
+/* Carousel */
 
-	#carousel {
-		@include vendor('align-items', 'center');
-		@include vendor('background-image', 'url("../images/banner.jpg")');
-		@include vendor('display', 'flex');
-		@include padding(4em, 0, (2em, 0, 0, 0));
-		background-attachment: fixed;
-		background-position: center;
-		background-repeat: no-repeat;
-		background-size: cover;
-		border-bottom: 0 !important;
+	.carousel {
+		@include vendor('background-image', 'url("../images/img_03.jpg")');
+		
 		cursor: default;
-		height: 60vh;
+		height: 70vh;
 		margin-bottom: -3.25em;
 		max-height: 32em;
 		min-height: 22em;
 		position: relative;
-		top: -3.25em;
+		top: -3.25em !important;
 
 		&:after {
 			@include vendor('transition', 'opacity #{_duration(banner)} ease');

@@ -13,7 +13,7 @@
 
 	#header {
 		@include vendor('display', 'flex');
-		background-color: _palette(bg-alt);
+		background-color: _palette(bg);
 		box-shadow: 0 0 0.25em 0 rgba(0,0,0,0.15);
 		cursor: default;
 		font-weight: _font(weight-bold);
@@ -22,7 +22,7 @@
 		letter-spacing: _font(letter-spacing-alt);
 		line-height: 3.25em;
 		margin: 0;
-		position: fixed;
+		position: sticky; //previous fixed;
 		text-transform: uppercase;
 		top: 0;
 		width: 100%;
@@ -38,7 +38,8 @@
 
 			img {
 				object-fit:scale-down;
-				max-height:1.5rem;
+				max-width: 10rem;
+				padding-top: 0.85rem;
 			}
 
 			strong {
@@ -145,7 +146,7 @@
 			@include vendor('animation', 'none');
 			background-color: transparent;
 			box-shadow: none;
-			position: absolute;
+			position: sticky; //previous absolute;
 
 			&.style1 { .logo { strong { color: _palette(accent1); } } }
 			&.style2 { .logo { strong { color: _palette(accent2); } } }
