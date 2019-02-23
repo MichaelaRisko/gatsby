@@ -4,7 +4,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 import hallinclusive from '../assets/images/hallinclusive.jpg'
-import homeinclusive from '../assets/images/Homeinclusive20.jpg'
+import homeinclusive from '../assets/images/HomeInclusive20.jpg'
 
 function SampleNextArrow(props) {
   const { className, style, onClick } = props;
