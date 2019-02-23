@@ -5,13 +5,15 @@ import CircularProgressbar from 'react-circular-progressbar'
 import 'react-circular-progressbar/dist/styles.css'
 
 import Layout from '../components/layout'
+import Carousel from '../components/Carousel'
+import CarouselFeedback from '../components/CarouselFeedback'
 
 import logo_dlhe from '../assets/images/logo_dlhe.png'
 import Layer1 from '../assets/images/Layer 1.png'
 import Layer3 from '../assets/images/Layer 3.png'
 import Layer4 from '../assets/images/Layer 4.png'
 import Layer5 from '../assets/images/Layer 5.png'
-import Carousel from '../components/Carousel'
+
 
 
 class HomeIndex extends React.Component {
@@ -70,7 +72,7 @@ class HomeIndex extends React.Component {
                     <div className="grid-wrapper">
                     
                         <div className=" about col-6">
-                        <Link to="/domov-oplotenia">
+                        <Link to="/oplotenia-domov">
                             <img src={Layer3} alt="" />
                             <div className="">
                                 <h4>Oplotenie pozemkov <br/>pre domáci sektor</h4>
@@ -146,8 +148,9 @@ class HomeIndex extends React.Component {
                             />
                             <p>spokojnych <br/> zakaznikov</p>
                            </section>
-
-        
+                        </div>
+                        <div className="inner box-row">
+                              <CarouselFeedback />
                         </div>
                     </section>
                     

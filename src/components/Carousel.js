@@ -6,11 +6,32 @@ import "slick-carousel/slick/slick-theme.css";
 import hallinclusive from '../assets/images/hallinclusive.jpg'
 import homeinclusive from '../assets/images/Homeinclusive20.jpg'
 
+function SampleNextArrow(props) {
+  const { className, style, onClick } = props;
+  return (
+    <div
+      className={className}
+      style={{ ...style, display: "block"}}
+      onClick={onClick}
+    />
+  );
+}
+
+function SamplePrevArrow(props) {
+  const { className, style, onClick } = props;
+  return (
+    <div
+      className={className}
+      style={{ ...style, display: "block" }}
+      onClick={onClick}
+    />
+  );
+}
+
 const BgImage = ({ url, ...rest }) => (
   <div
     style={{
-      width: "100%",
-      minHeight: "90vh",
+      minHeight: "95vh",
       backgroundImage: `url(${url})`,
       backgroundRepeat: "no-repeat",
       backgroundPosition: "center",
@@ -30,8 +51,8 @@ export default class Carousel extends Component {
       autoplay: true,
       speed: 2500,
       autoplaySpeed: 15000,
-
-      useCSS: true
+      nextArrow: <SampleNextArrow />,
+      prevArrow: <SamplePrevArrow />
     };
 
     const bannerSlide = (what) => (
@@ -55,7 +76,7 @@ export default class Carousel extends Component {
       </div>
       )
     return (
-      <div className="carousel">
+      <div className="carousel no-padding">
         <Slider {...settings}>
           
           {bannerSlide("hall")}
