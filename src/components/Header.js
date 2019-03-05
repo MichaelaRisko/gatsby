@@ -46,7 +46,6 @@ class Header extends React.Component {
 
     render(){
         let navigation;
-        
         if(this.state.width > 780){
             navigation =
                 <nav className="scroll-navigation">
