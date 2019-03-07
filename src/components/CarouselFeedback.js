@@ -44,7 +44,7 @@ export default class CustomArrows extends Component {
     };
     return (
       <div className="carousel">
-        <h2 style={{textAlign: 'center'}}>Spokojni zakaznici</h2>
+        <h2 style={{textAlign: 'center'}}>Naši spokojní zákazníci</h2>
         <Slider {...settings}>
           <div>
             <img src={feedback1} style={{height: '4.5rem', padding: '0.75rem 0', margin: '0 auto'}}/>

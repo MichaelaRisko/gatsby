@@ -53,12 +53,17 @@ class Header extends React.Component {
                 <Scrollspy items={ ['main'] } currentClassName="is-active" offset={-300}>
                 <li>
                     <Scroll type="id" element="main">
-                        <a href="#">O nas</a>
+                        <a href="#">O nás</a>
                     </Scroll>
                 </li>
                 <li>
                     <Scroll type="id" element="products">
                         <a href="#">produkty</a>
+                    </Scroll>
+                </li>
+                <li>
+                    <Scroll type="id" element="gallery">
+                        <a href="#">galéria</a>
                     </Scroll>
                 </li>
                 <li>
@@ -68,7 +73,7 @@ class Header extends React.Component {
                 </li>
                 <li>
                     <Scroll type="id" element="price">
-                        <a href="#">cenova ponuka</a>
+                        <a href="#">cenová ponuka</a>
                     </Scroll>
                 </li>
    

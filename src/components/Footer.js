@@ -9,7 +9,7 @@ const Footer = (props) => (
         <div className="inner">
     <div>
     <Link to="/" className="logo"><img src={logo} alt="" /></Link>
-                <p>info@transferrum.com</p>
+                <p>info@transferrum.sk</p>
     </div>
     <div className="footer-reverse">
         <ul className="icons">

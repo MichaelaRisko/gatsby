@@ -4,15 +4,98 @@ class InputForm extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-
+            what: null
         }
     }
 
-    handleOptionChange(what){
-        console.log(what)
-    }
 
     render(){
+
+
+    const brana = () => (
+    <div>
+        <div className="field">
+        <label>Rozmer Brány</label>
+    </div>
+    <div className="field ">
+        <label >Šírka(m)</label>
+        <input type="text" name="width" id="width" />
+    </div>
+    <div className="field ">
+        <label >Výška(m)</label>
+        <input type="text" name="height" id="height" />
+    </div>
+ 
+                                            <div className="select-wrapper mb-5">
+                                            <label>typ brány</label>
+                                                <select name="demo-category" id="demo-category">
+                                                    <option defaultValue="">- Vyberte si typ brány -</option>
+                                                    <option value="1">Segmentová</option>
+                                                    <option value="1">Roletová</option>
+                                                    <option value="1">Dvojkrídlová zateplená</option>
+                                                    <option value="1">Dvojkrídlová nezateplená</option>
+                                                    <option value="1">Výklopná zateplená</option>
+                                                    <option value="1">Výklopná nezateplená</option>
+                                                    <option value="1">Výklopná bez výplne</option>
+                                                </select>
+                                            </div>
+
+                                            <div className="select-wrapper mb-5">
+                                            <label>farba</label>
+                                                <select name="demo-category" id="demo-category">
+                                                    <option defaultValue="">- Vyberte si farbu -</option>
+                                                    <option value="1">Biela RAL 9016</option>
+                                                    <option value="1">Hnedá RAL 8014</option>
+                                                    <option value="1">Sivá RAL 7016</option>
+                                                    <option value="1">Zlatý dub</option>
+                                                    <option value="1">Orech</option>
+                                                    <option value="1">Celá paleta RAL a motívy podobné drevu</option>
+                                                  
+                                                </select>
+                                            </div>
+                                      
+    
+    </div>
+    )
+
+    const oplotenie = () => (
+        <div>
+            <div className="field">
+            <label htmlFor="email">Rozmer</label>
+        </div>
+        <div className="field half first ">
+            <label htmlFor="email">Šírka(m)</label>
+            <input type="text" name="width" id="width" />
+        </div>
+        <div className="field half">
+            <label htmlFor="email">Výška(m)</label>
+            <input type="text" name="height" id="height" />
+        </div>
+        <div className="field">
+                        <label htmlFor="">Typ brány pri oplotení</label>
+                    </div>
+                   
+                        <div className="field">
+                            <input type="radio" id="brana_dvojkridlova" name="typ_brany" />
+                            <label htmlFor="brana_dvojkridlova">Brána Dvojkrídlová</label>
+                        </div>
+                    
+                   
+                        <div className="field">
+                            <input type="radio" id="brana_samonosta_posuvna" name="typ_brany" />
+                            <label htmlFor="brana_samonosta_posuvna">Brána samonostná posuvná</label>
+                        </div>
+                    
+                   
+                        <div className="field">
+                            <input type="radio" id="brana_samonosta_posuvna_bez_vyplne" name="typ_brany" />
+                            <label htmlFor="brana_samonosta_posuvna_bez_vyplne">Brána samonostná posuvná bez výplne</label>
+                        </div>
+                  
+        </div>
+        )
+    
+
         return(<section id="contact">
         <div className="inner">
             <section>
@@ -22,75 +105,42 @@ class InputForm extends React.Component {
                         <input type="text" name="name" id="name" />
                     </div>
                     <div className="field">
+                        <label htmlFor="phone">Telefón</label>
+                        <input type="text" name="phone" id="phone" />
+                    </div>
+                    <div className="field">
                         <label htmlFor="email">Email</label>
                         <input type="text" name="email" id="email" />
                     </div>
                     <div className="field">
-                        <label htmlFor="phone">Telefon</label>
-                        <input type="text" name="phone" id="phone" />
+                        <label htmlFor="place">Miesto montáže</label>
+                        <input type="text" name="place" id="place" />
                     </div>
                     <div className="field">
-                        <label htmlFor="email">Cenova ponuka pre</label>
+                        <label htmlFor="">Cenová ponuka pre</label>
                     </div>
                     <div className="col-4">
                         <div className="field half first ">
-                            <input type="radio" id="brana" name="what"/>
-                            <label htmlFor="brana">Branu</label>
+                            <input type="radio" id="brana" name="what" onChange={(e) => this.setState({what: e.target.id})}/>
+                            <label htmlFor="brana">Garažovú Bránu</label>
                         </div>
                     </div>
                     <div className="col-4">
                         <div className="field half ">
-                            <input type="radio" id="oplotenie" name="what"/>
+                            <input type="radio" id="oplotenie" name="what" onChange={(e) => this.setState({what: e.target.id})}/>
                             <label htmlFor="oplotenie">Oplotenie</label>
                         </div>
                     </div>
-                    <div className="field">
-                        <label htmlFor="email">Rozmer</label>
-                    </div>
-                    <div className="field half first ">
-                        <label htmlFor="email">Sirka(m)</label>
-                        <input type="text" name="width" id="width" />
-                    </div>
-                    <div className="field half">
-                        <label htmlFor="email">Vyska(m)</label>
-                        <input type="text" name="height" id="height" />
-                    </div>
-                    <div className="field">
-                        <label htmlFor="phone">Farba</label>
-                        <input type="text" name="color" id="color" />
-                    </div>
-                    <div className="col-4">
-                        <div className="field half">
-                            <input type="radio" id="rucna" name="property1" />
-                            <label htmlFor="rucna">Rucna</label>
-                        </div>
-                    </div>
-                    <div className="col-4">
-                        <div className="field half">
-                            <input type="radio" id="automaticka" name="property1" />
-                            <label htmlFor="automaticka">Automaticka</label>
-                        </div>
-                    </div>
-                    <div className="col-4">
-                        <div className="field half">
-                            <input type="radio" id="zateplena" name="property2" />
-                            <label htmlFor="zateplena">zateplena</label>
-                        </div>
-                    </div>
-                    <div className="col-4">
-                        <div className="field half">
-                            <input type="radio" id="nezateplena" name="property2" />
-                            <label htmlFor="nezateplena">nezateplena</label>
-                        </div>
-                    </div>
+                    {this.state.what === 'brana' && brana() }
+                    {this.state.what === 'oplotenie' && oplotenie() }
                     
                     <div className="field">
-                        <label htmlFor="message">Komentar</label>
+                        <label htmlFor="message">Komentár</label>
                         <textarea name="message" id="message" rows="6"></textarea>
                     </div>
                     <ul className="actions">
-                        <li><input type="submit" value="odoslat" /></li>
-                        <li><input type="reset" value="vymazat" className="special" /></li>
+                        <li><input type="submit" value="odoslať" /></li>
+                        <li><input type="reset" value="vymazať" className="special" onClick={ () => this.setState({what: null})}/></li>
                     </ul>
                 </form>
             </section>

@@ -9,10 +9,28 @@ import Carousel from '../components/Carousel'
 import CarouselFeedback from '../components/CarouselFeedback'
 
 import logo_dlhe from '../assets/images/logo_dlhe.png'
+
+import aw from '../assets/images/aw.png'
+import bft from '../assets/images/bft.png'
+import gfa from '../assets/images/gfa.jpg'
+import nice from '../assets/images/nice.jpg'
+import somfy from '../assets/images/somfy.jpg'
+import sommer from '../assets/images/sommer.jpg'
+
 import Layer1 from '../assets/images/Layer 1.png'
 import Layer3 from '../assets/images/Layer 3.png'
 import Layer4 from '../assets/images/Layer 4.png'
 import Layer5 from '../assets/images/Layer 5.png'
+
+import gallery01 from '../assets/images/gallery01.jpg'
+import gallery02 from '../assets/images/gallery02.jpg'
+import gallery03 from '../assets/images/gallery03.jpg'
+import gallery04 from '../assets/images/gallery04.jpg'
+import gallery05 from '../assets/images/gallery05.jpg'
+import gallery06 from '../assets/images/gallery06.jpg'
+import gallery07 from '../assets/images/gallery07.jpg'
+import gallery08 from '../assets/images/gallery08.jpg'
+
 
 
 
@@ -54,10 +72,12 @@ class HomeIndex extends React.Component {
                 <div >
                     <section id="main" className="town">
                         <div className="inner" style={{paddingBottom: '0'}}>
-                            <img src={logo_dlhe} alt="" style={{maxHeight: '3rem', paddingBottom: '1.5rem'}}/>
-                            <p>nasa spolocnost blabla Nullam et orci eu lorem consequat tincidunt vivamus et sagittis libero. Mauris aliquet magna magna sed nunc rhoncus pharetra. Pellentesque condimentum sem. In efficitur ligula tate urna. Maecenas laoreet massa vel lacinia pellentesque lorem ipsum dolor. Nullam et orci eu lorem consequat tincidunt. Vivamus et sagittis libero. Mauris aliquet magna magna sed nunc rhoncus amet pharetra et feugiat tempus. Napiste nam vase poziadavky a my daco daco</p>
+                            <img src={logo_dlhe} alt="" style={{height: '4.5rem', paddingBottom: '1.5rem'}}/>
+                            <p>Naša spoločnosť sa zaoberá predajom a montážou vysoko kvalitných a funkčných vstupných brán.
+Špičková a praxou preverená technológia povrchových úprav predurčuje naše výrobky na dlhodobé 
+a bezproblémové užívanie. Jedinečný estetický dizajn spĺňa nároky najnáročnejších zákazníkov. KEDY STE VZNIKLI, ako dlho sa tomu venujete, kde hlavne  posobite, Napiste nam vase poziadavky a my daco daco</p>
                             <ul className="actions" style={{margin: '0'}}>
-                                <li><Link to="/cenova-ponuka" className="button special-2">napiste nam</Link></li>
+                                <li><Link to="/cenova-ponuka" className="button special-2">Napíšte nám</Link></li>
                             </ul>
                         </div>
                        
@@ -68,6 +88,7 @@ class HomeIndex extends React.Component {
 
 
                     <div className="inner" id="products" style={{borderTopWidth: '0', paddingTop: '3rem'}}>
+                    <h2 style={{textAlign: 'center',  padding: "2rem"}}>Naše produkty</h2>
                     
                     <div className="grid-wrapper">
                     
@@ -112,53 +133,50 @@ class HomeIndex extends React.Component {
                     </div>
                     </div>
 
-                    <section id="feedback" >
-                        <div className="inner box-row">
-                           
-                            <section className="circle">
-                           <CircularProgressbar
-                            percentage={percentage-24}
-                            text={"2559"}
-                            styles={{
-                                path: { stroke: `#66C6E3` },
-                                text: { fill: '#31353D', fontSize: '1.4rem' },
-                              }}
-                            />
-                            <p>metrov plotov <br/> sme postavili</p>
-                           </section>
-                           <section className="circle">
-                           <CircularProgressbar
-                            percentage={percentage-8}
-                            text={"217"}
-                            styles={{
-                                path: { stroke: `#66C6E3` },
-                                text: { fill: '#31353D', fontSize: '1.4rem' },
-                              }}
-                            />
-                            <p>bran sme <br/> instalovali</p>
-                           </section>
-                           <section className="circle">
-                           <CircularProgressbar
-                            percentage={percentage}
-                            text={"814"}
-                            styles={{
-                                path: { stroke: `#66C6E3` },
-                                text: { fill: '#31353D', fontSize: '1.4rem' },
-                              }}
-                            />
-                            <p>spokojnych <br/> zakaznikov</p>
-                           </section>
+                    <section className="inner" >
+                    <h2 style={{textAlign: 'center'}}>Pohony s ktorými pracujeme</h2>
+                        <div className="box-row">
+                        
+         
+                            <img src={aw} alt="" />
+                            <img src={bft} alt="" />
+                            <img src={gfa} alt="" />
+                            <img src={nice} alt="" />
+                            <img src={somfy} alt="" />
+                            <img src={sommer} alt="" />
+                        
                         </div>
+                    </section>
+
+                    <section id="gallery" style={{paddingTop: "5rem"}}>
+                    <h2 style={{textAlign: 'center'}}>Galéria</h2>
+       
+
+<div className="box alt">
+    <div className="grid-wrapper">
+        <div className="col-4"><span className="image fit"><img src={gallery01} alt="" /></span></div>
+        <div className="col-4"><span className="image fit"><img src={gallery02} alt="" /></span></div>
+        <div className="col-4"><span className="image fit"><img src={gallery03} alt="" /></span></div>
+        <div className="col-4"><span className="image fit"><img src={gallery04} alt="" /></span></div>
+        <div className="col-4"><span className="image fit"><img src={gallery05} alt="" /></span></div>
+        <div className="col-4"><span className="image fit"><img src={gallery06} alt="" /></span></div>
+        <div className="col-4"><span className="image fit"><img src={gallery07} alt="" /></span></div>
+        <div className="col-4"><span className="image fit"><img src={gallery08} alt="" /></span></div>
+        <div className="col-4"><span className="image fit"><img src={gallery05} alt="" /></span></div>
+    </div>
+</div>
+                    </section>
+                    
+                    <section id="feedback" className="inner" >
+        
                         <div className="inner box-row">
                               <CarouselFeedback />
                         </div>
                     </section>
-                    
-
 
                     <section id="price" className="invert">
                         <div className="inner box-row" style={{padding: '4rem 0'}}>
-                                <h2 style={{margin: '0'}}>Kontaktujte nas pre vasu cenovu ponuku</h2>
+                                <h2 style={{margin: '0'}}>Kontaktujte nás pre Vašu cenovú ponuku</h2>
                                            
                             <Link to="/cenova-ponuka" className="button special">Kontakt</Link>
                             

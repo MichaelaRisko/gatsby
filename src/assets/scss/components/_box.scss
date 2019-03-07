@@ -25,41 +25,36 @@
 	}
 
 	.box-row {
-		@include vendor('align-items', 'flex-start');
-		@include vendor('justify-content', 'space-between');
+		@include vendor('align-items', 'center');
+		@include vendor('justify-content', 'space-evenly');
 		@include vendor('display', 'flex');	
+		max-width: 100%;
 		padding: 2rem;
 
-		.circle {
-			padding: 0 5rem;
-			flex-direction: column;
-
 			@include breakpoint(medium) {
-				padding: 0 2.5rem;
+				//padding: 0 2.5rem;
 			}
 
 			@include breakpoint(small) {
-				padding: 0  0.5rem;
+				//padding: 0  0.5rem;
 			}
 
 			@include breakpoint(xsmall) {
-				padding: 2.5rem 0;
+				//padding: 2.5rem 0;
 			}
 
-			p {
-				text-align: center;
-				font-size: 1.5rem;
-			}
-		}
+
 
 
 
 		@include breakpoint(xsmall) {
 			flex-direction: column;
 
-			.circle p {
-				font-size: 2rem;
-			}
+
+		}
+
+		img {
+			height: 6rem;
 		}
 	}
 
