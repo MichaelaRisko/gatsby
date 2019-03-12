@@ -11,6 +11,27 @@ class InputForm extends React.Component {
 
     render(){
 
+    const ovladanie = () => (
+<div>
+                    <div className="field">
+                        <label htmlFor="">Typ ovládania</label>
+                    </div>
+                   
+                    <div className="col-4">
+                        <div className="field half  ">
+                            <input type="radio" id="rucne" name="typ_ovladania" />
+                            <label htmlFor="rucne">Ručné</label>
+                        </div></div>
+                    
+                   
+                        <div className="col-4">
+                        <div className="field half  ">
+                            <input type="radio" id="automaticke" name="typ_ovladania" />
+                            <label htmlFor="automaticke">Automatické</label>
+                            </div></div>
+</div>
+    )
+
 
     const brana = () => (
     <div>
@@ -53,7 +74,7 @@ class InputForm extends React.Component {
                                                   
                                                 </select>
                                             </div>
-                                      
+                                            {ovladanie()}      
     
     </div>
     )
@@ -62,7 +83,7 @@ class InputForm extends React.Component {
         <div>
             <div className="field">
             <label htmlFor="email">Rozmer</label>
-        </div>
+            </div>
         <div className="field half first ">
             <label htmlFor="email">Šírka(m)</label>
             <input type="text" name="width" id="width" />
@@ -91,12 +112,14 @@ class InputForm extends React.Component {
                             <input type="radio" id="brana_samonosta_posuvna_bez_vyplne" name="typ_brany" />
                             <label htmlFor="brana_samonosta_posuvna_bez_vyplne">Brána samonostná posuvná bez výplne</label>
                         </div>
-                  
-        </div>
-        )
+                        {ovladanie()}
+                        </div>
+        
+        );
     
 
-        return(<section id="contact">
+        return(
+            <section id="contact">
         <div className="inner">
             <section>
                 <form method="post" action="#">
@@ -122,22 +145,23 @@ class InputForm extends React.Component {
                     <div className="col-4">
                         <div className="field half first ">
                             <input type="radio" id="brana" name="what" onChange={(e) => this.setState({what: e.target.id})}/>
-                            <label htmlFor="brana">Garažovú Bránu</label>
+                            <label htmlFor="brana"><strong>Garažovú Bránu</strong></label>
                         </div>
                     </div>
                     <div className="col-4">
                         <div className="field half ">
                             <input type="radio" id="oplotenie" name="what" onChange={(e) => this.setState({what: e.target.id})}/>
-                            <label htmlFor="oplotenie">Oplotenie</label>
+                            <label htmlFor="oplotenie"><strong>Oplotenie</strong></label>
                         </div>
                     </div>
                     {this.state.what === 'brana' && brana() }
                     {this.state.what === 'oplotenie' && oplotenie() }
                     
                     <div className="field">
-                        <label htmlFor="message">Komentár</label>
-                        <textarea name="message" id="message" rows="6"></textarea>
+                        <label htmlFor="message">Komentár</label> 
+                        <textarea name="message" id="message" rows="6" placeholder="Do komentára uveďte prosím farbu a vzor"></textarea>
                     </div>
+                    <div><p>Kompletnú ponuku nájdete na <a href="https://www.wisniowski.pl/cz" target="_blank"><strong>https://www.wisniowski.pl/cz</strong></a></p> </div>
                     <ul className="actions">
                         <li><input type="submit" value="odoslať" /></li>
                         <li><input type="reset" value="vymazať" className="special" onClick={ () => this.setState({what: null})}/></li>
@@ -156,16 +180,19 @@ class InputForm extends React.Component {
                     <div className="contact-method">
                         <span className="icon alt fa-phone"></span>
                         <h3>Mobil</h3>
-                        <span>+421 905 111 888</span>
+                        <span>+421 905 235 468 <br/>
+                        +421 907 094 801<br/>
+                        <strong>predajňa</strong>   052 4369019</span>
                     </div>
                 </section>
                 <section>
                     <div className="contact-method">
                         <span className="icon alt fa-home"></span>
-                        <h3>Adresa</h3>
-                        <span>Budovatelska 18<br />
-                        064 01<br />
-                        Stara Lubovna</span>
+                        <h3>Predajňa</h3>
+                        <span>
+                            Budovateľská 18<br />
+                        064 01
+                        Stará Ľubovňa</span>
                     </div>
                 </section>
             </section>

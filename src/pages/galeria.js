@@ -2,6 +2,7 @@ import React from 'react'
 import Helmet from 'react-helmet'
 import Layout from '../components/layout'
 import { Link } from 'gatsby'
+import Gallery from '../components/gallery'
 
 import pic01 from '../assets/images/pic01.jpg'
 import pic02 from '../assets/images/pic02.jpg'
@@ -18,51 +19,12 @@ const About = (props) => (
             <meta name="description" content="About Page" />
         </Helmet>
 
-        <div className="alt">
-            <section id="one" className="tiles">
-                        <article style={{backgroundImage: `url(${pic01})`}}>
-                            <header className="major">
-                                <h3>Aliquam</h3>
-                                <p>Ipsum dolor sit amet</p>
-                            </header>
-                            <Link to="/landing" className="link primary"></Link>
-                        </article>
-                        <article style={{backgroundImage: `url(${pic02})`}}>
-                            <header className="major">
-                                <h3>Tempus</h3>
-                                <p>feugiat amet tempus</p>
-                            </header>
-                            <Link to="/landing" className="link primary"></Link>
-                        </article>
-                        <article style={{backgroundImage: `url(${pic03})`}}>
-                            <header className="major">
-                                <h3>Magna</h3>
-                                <p>Lorem etiam nullam</p>
-                            </header>
-                            <Link to="/landing" className="link primary"></Link>
-                        </article>
-                        <article style={{backgroundImage: `url(${pic04})`}}>
-                            <header className="major">
-                                <h3>Ipsum</h3>
-                                <p>Nisl sed aliquam</p>
-                            </header>
-                            <Link to="/landing" className="link primary"></Link>
-                        </article>
-                        <article style={{backgroundImage: `url(${pic05})`}}>
-                            <header className="major">
-                                <h3>Consequat</h3>
-                                <p>Ipsum dolor sit amet</p>
-                            </header>
-                            <Link to="/landing" className="link primary"></Link>
-                        </article>
-                        <article style={{backgroundImage: `url(${pic06})`}}>
-                            <header className="major">
-                                <h3>Etiam</h3>
-                                <p>Feugiat amet tempus</p>
-                            </header>
-                            <Link to="/landing" className="link primary"></Link>
-                        </article>
-                    </section>
+        <div style={{    maxWidth: '80rem', margin: '0 auto'}}>
+  
+                    <header className="major" style={{paddingTop: '5rem', margin: '0 auto'}}>
+                        <h1 >Galéria našich produktov</h1>
+                    </header>
+        <Gallery full={true}/>
         </div>
 
     </Layout>

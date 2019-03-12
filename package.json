@@ -21,6 +21,8 @@
     "react-circular-progressbar": "^1.0.0",
     "react-dom": "^16.6.3",
     "react-helmet": "^5.2.0",
+    "react-images": "^0.5.19",
+    "react-photo-gallery": "^6.3.2",
     "react-scroll-to-element": "^0.2.0",
     "react-scrollspy": "^3.3.5",
     "react-slick": "^0.23.2",

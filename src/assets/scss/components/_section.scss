@@ -19,6 +19,12 @@
 			color: _palette(bg);
 		}
 
+		@include breakpoint(small) {
+			h2 {
+				padding-bottom: 3rem;
+			}
+		}
+
 	}
 
 	header {

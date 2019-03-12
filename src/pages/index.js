@@ -5,10 +5,12 @@ import CircularProgressbar from 'react-circular-progressbar'
 import 'react-circular-progressbar/dist/styles.css'
 
 import Layout from '../components/layout'
+import Gallery from '../components/gallery'
 import Carousel from '../components/Carousel'
 import CarouselFeedback from '../components/CarouselFeedback'
 
 import logo_dlhe from '../assets/images/logo_dlhe.png'
+import logo from '../assets/images/logo.png'
 
 import aw from '../assets/images/aw.png'
 import bft from '../assets/images/bft.png'
@@ -72,7 +74,11 @@ class HomeIndex extends React.Component {
                 <div >
                     <section id="main" className="town">
                         <div className="inner" style={{paddingBottom: '0'}}>
-                            <img src={logo_dlhe} alt="" style={{height: '4.5rem', paddingBottom: '1.5rem'}}/>
+                            <div className="logo_full">
+                            <img src={logo} alt=""/>
+                            <img src={logo_dlhe} alt="" />
+                            </div>
+                            
                             <p>Naša spoločnosť sa zaoberá predajom a montážou vysoko kvalitných a funkčných vstupných brán.
 Špičková a praxou preverená technológia povrchových úprav predurčuje naše výrobky na dlhodobé 
 a bezproblémové užívanie. Jedinečný estetický dizajn spĺňa nároky najnáročnejších zákazníkov. KEDY STE VZNIKLI, ako dlho sa tomu venujete, kde hlavne  posobite, Napiste nam vase poziadavky a my daco daco</p>
@@ -133,6 +139,8 @@ a bezproblémové užívanie. Jedinečný estetický dizajn spĺňa nároky najn
                     </div>
                     </div>
 
+                    
+
                     <section className="inner" >
                     <h2 style={{textAlign: 'center'}}>Pohony s ktorými pracujeme</h2>
                         <div className="box-row">
@@ -148,23 +156,20 @@ a bezproblémové užívanie. Jedinečný estetický dizajn spĺňa nároky najn
                         </div>
                     </section>
 
-                    <section id="gallery" style={{paddingTop: "5rem"}}>
-                    <h2 style={{textAlign: 'center'}}>Galéria</h2>
-       
+ 
 
-<div className="box alt">
-    <div className="grid-wrapper">
-        <div className="col-4"><span className="image fit"><img src={gallery01} alt="" /></span></div>
-        <div className="col-4"><span className="image fit"><img src={gallery02} alt="" /></span></div>
-        <div className="col-4"><span className="image fit"><img src={gallery03} alt="" /></span></div>
-        <div className="col-4"><span className="image fit"><img src={gallery04} alt="" /></span></div>
-        <div className="col-4"><span className="image fit"><img src={gallery05} alt="" /></span></div>
-        <div className="col-4"><span className="image fit"><img src={gallery06} alt="" /></span></div>
-        <div className="col-4"><span className="image fit"><img src={gallery07} alt="" /></span></div>
-        <div className="col-4"><span className="image fit"><img src={gallery08} alt="" /></span></div>
-        <div className="col-4"><span className="image fit"><img src={gallery05} alt="" /></span></div>
-    </div>
-</div>
+
+
+                    <section id="gallery" style={{paddingTop: "5rem"}}>
+                    <div className="inner gallery" >
+                    <h2 >Galéria</h2>
+                                           
+                           
+       
+<Gallery full={false} />
+<Link to="/galeria" className="button special">celú galériu nájdete tu</Link>
+                            
+                            </div>
                     </section>
                     
                     <section id="feedback" className="inner" >
