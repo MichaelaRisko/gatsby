@@ -1,26 +1,26 @@
-import React from 'react'
-import Helmet from 'react-helmet'
-import Layout from '../components/layout'
-import BannerLanding from '../components/BannerLanding'
-import InputForm from '../components/inputForm'
+import React from 'react';
+import Helmet from 'react-helmet';
+import Layout from '../components/layout';
+import BannerLanding from '../components/BannerLanding';
+import InputForm from '../components/inputForm';
 
 
-const Landing = (props) => (
-    <Layout>
-        <Helmet>
-            <title>Landing - Forty by HTML5 UP</title>
-            <meta name="description" content="Landing Page" />
-        </Helmet>
+const Landing = props => (
+  <Layout>
+    <Helmet>
+      <title>Landing - Forty by HTML5 UP</title>
+      <meta name="description" content="Landing Page" />
+    </Helmet>
 
-        <BannerLanding />
+    <BannerLanding />
 
-        <div>
-            <div className="inner" style={{paddingTop: '0'}}>
-            <InputForm />
-            </div>      
-        </div>
+    <div>
+      <div className="inner" style={{ paddingTop: '0' }}>
+        <InputForm />
+      </div>
+    </div>
 
-    </Layout>
-)
+  </Layout>
+);
 
-export default Landing
+export default Landing;
