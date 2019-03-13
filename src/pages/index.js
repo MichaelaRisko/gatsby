@@ -64,9 +64,7 @@ class HomeIndex extends React.Component {
             { name: 'keywords', content: 'sample, something' },
           ]}
         />
-
         <Carousel />
-
         <div>
           <section id="main" className="town">
             <div className="inner" style={{ paddingBottom: '0' }}>
@@ -75,11 +73,38 @@ class HomeIndex extends React.Component {
                 <img src={logo_dlhe} alt="" />
               </div>
 
-              <p>
-Naša spoločnosť sa zaoberá predajom a montážou vysoko kvalitných a funkčných vstupných brán.
-Špičková a praxou preverená technológia povrchových úprav predurčuje naše výrobky na dlhodobé
-a bezproblémové užívanie. Jedinečný estetický dizajn spĺňa nároky najnáročnejších zákazníkov. KEDY STE VZNIKLI, ako dlho sa tomu venujete, kde hlavne  posobite, Napiste nam vase poziadavky a my daco daco
+              <p style={{marginBottom: '0.5rem'}}>
+              Firma Transferrum vznikla v roku 1993, postupom času sme sa zamerali na <strong>dodávky a montáž
+garážových brán a oplotení</strong>. <br/>Od roku 2003 sme oficiálnym zástupcom firmy Wisniowski Sp. z
+o.o. S.K.A. 33-311 Wieloglowy 153, Poľsko na slovenskom trhu.
+Z jej produkcie dodávame a montujeme pre súkromný a priemyselný sektor:
               </p>
+              <ul className="product-list"><strong>Garážové brány</strong>
+                  <li>Sekčné</li>
+                  <li>Roletové</li>
+                  <li>Výklopné</li>
+                  <li>Dvojkrídlové</li>
+                  <li>Závesné</li>
+              </ul>
+              <ul className="product-list"><strong>Plotové brány</strong>
+                  <li>Zásuvné samonosné</li>
+                  <li>Zásuvné</li>
+                  <li>Dvojkrídlové</li>
+                  <li>Dvojkrídlové skladacie</li>
+              </ul>
+              <ul className="product-list"><strong>Oplotenie</strong>
+                  <li>Priemyselné segmenty</li>
+                  <li>Kované ploty</li>
+                  <li>Plotové segmenty</li>
+                  <li>Bránky</li>
+                  <li>Stĺpy</li>
+                  <li>Príslušenstvo</li>
+              </ul>
+              <p style={{marginBottom: '0.5rem'}}>Automatizácia a pohony značky AW, BFT, GFA, Nice, Came, Somfy, Sommer.<br/>Ďalej ponúkame predaj a montáž závor.</p>
+              <p>
+Záručný a pozáručný servis výrobkov AW – poradenstvo.<br/>
+Sme držiteľom oprávnenia na montáž a servis zvisle posuvných brán podľa vyhlášky 508/2009
+– skupina BF.</p>
               <ul className="actions" style={{ margin: '0' }}>
                 <li><Link to="/cenova-ponuka" className="button special-2">Napíšte nám</Link></li>
               </ul>
