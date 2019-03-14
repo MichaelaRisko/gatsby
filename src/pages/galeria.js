@@ -2,21 +2,13 @@ import React from 'react';
 import Helmet from 'react-helmet';
 import { Link } from 'gatsby';
 import Layout from '../components/layout';
-import Gallery from '../components/gallery';
+import Gallery from '../components/Gallery';
 
-import pic01 from '../assets/images/pic01.jpg';
-import pic02 from '../assets/images/pic02.jpg';
-import pic03 from '../assets/images/pic03.jpg';
-import pic04 from '../assets/images/pic04.jpg';
-import pic05 from '../assets/images/pic05.jpg';
-import pic06 from '../assets/images/pic06.jpg';
-
-
-const About = props => (
+const GalleryPage = props => (
   <Layout>
     <Helmet>
-      <title>About - Forty by HTML5 UP</title>
-      <meta name="description" content="About Page" />
+      <title>TRANSFERRUM - Galéria produktov</title>
+      <meta name="description" content="Galéria - ploty, pohony, garážové brány, oplotenia" />
     </Helmet>
 
     <div style={{ maxWidth: '80rem', margin: '0 auto' }}>
@@ -30,4 +22,4 @@ const About = props => (
   </Layout>
 );
 
-export default About;
+export default GalleryPage;

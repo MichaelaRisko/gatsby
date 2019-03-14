@@ -3,12 +3,12 @@ import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
-import gallery11 from '../assets/images/gallery11.jpg';
-import gallery07 from '../assets/images/gallery07.jpg';
-import gallery14 from '../assets/images/gallery14.jpg';
-import gallery21 from '../assets/images/gallery21.jpg';
-import gallery29 from '../assets/images/gallery29.jpg';
-import gallery16 from '../assets/images/gallery16.jpg';
+import gallery11 from '../assets/images/gallery/catalog/gallery11.jpg';
+import gallery07 from '../assets/images/gallery/catalog/gallery07.jpg';
+import gallery14 from '../assets/images/gallery/catalog/gallery14.jpg';
+import gallery21 from '../assets/images/gallery/catalog/gallery21.jpg';
+import gallery29 from '../assets/images/gallery/catalog/gallery29.jpg';
+import gallery16 from '../assets/images/gallery/catalog/gallery16.jpg';
 
 function SampleNextArrow(props) {
   const { className, style, onClick } = props;

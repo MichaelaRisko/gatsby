@@ -188,11 +188,13 @@ Kompletnú ponuku nájdete na
                 <span className="icon alt fa-phone" />
                 <h3>Mobil</h3>
                 <span>
+                  <strong>Marián Kaleta </strong>
 +421 905 235 468
                   <br />
+                  <strong>Martin Kaleta </strong>
                         +421 907 094 801
                   <br />
-                  <strong>predajňa</strong>
+                  <strong>Predajňa</strong>
                   {' '}
 052 4369019
                 </span>
@@ -201,12 +203,15 @@ Kompletnú ponuku nájdete na
             <section>
               <div className="contact-method">
                 <span className="icon alt fa-home" />
-                <h3>Predajňa</h3>
+                <h3>Marián Kaleta – Transferrum</h3>
                 <span>
-                            Budovateľská 18
-                  <br />
-                        064 01
-                        Stará Ľubovňa
+
+Budovateľská 18 <br/>
+064 01 Stará Ľubovňa <br/>
+IČO: 30614082 <br/>
+DIČ: 1020762171 <br/>
+IČ DPH: SK1020762171 <br/>
+číslo živ. reg.: 710-1500
                 </span>
               </div>
             </section>

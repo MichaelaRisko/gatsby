@@ -2,9 +2,9 @@ const path = require(`path`)
 
 module.exports = {
   siteMetadata: {
-    title: "Gatsby Starter - Forty V2",
-    author: "Hunter Chang",
-    description: "A Gatsby.js V2 Starter based on Forty by HTML5 UP"
+    title: "Transferrum",
+    author: "Ing. Michaela Risko",
+    description: "Simple web page for Transferrum Stara Lubovna"
   },
   plugins: [
     'gatsby-plugin-react-helmet',

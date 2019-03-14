@@ -5,33 +5,33 @@ import CircularProgressbar from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
 
 import Layout from '../components/layout';
-import Gallery from '../components/gallery';
+import Gallery from '../components/Gallery';
 import Carousel from '../components/Carousel';
 import CarouselFeedback from '../components/CarouselFeedback';
 
 import logo_dlhe from '../assets/images/logo_dlhe.png';
 import logo from '../assets/images/logo.png';
 
-import aw from '../assets/images/aw.png';
-import bft from '../assets/images/bft.png';
-import gfa from '../assets/images/gfa.jpg';
-import nice from '../assets/images/nice.jpg';
-import somfy from '../assets/images/somfy.jpg';
-import sommer from '../assets/images/sommer.jpg';
+import aw from '../assets/images/brand/aw.png';
+import bft from '../assets/images/brand/bft.png';
+import gfa from '../assets/images/brand/gfa.jpg';
+import nice from '../assets/images/brand/nice.jpg';
+import somfy from '../assets/images/brand/somfy.jpg';
+import sommer from '../assets/images/brand/sommer.jpg';
 
-import Layer1 from '../assets/images/Layer 1.png';
-import Layer3 from '../assets/images/Layer 3.png';
-import Layer4 from '../assets/images/Layer 4.png';
-import Layer5 from '../assets/images/Layer 5.png';
+import industry01 from '../assets/images/icons/industry01.png';
+import home02 from '../assets/images/icons/home02.png';
+import home01 from '../assets/images/icons/home01.png';
+import industry02 from '../assets/images/icons/industry02.png';
 
-import gallery01 from '../assets/images/gallery01.jpg';
-import gallery02 from '../assets/images/gallery02.jpg';
-import gallery03 from '../assets/images/gallery03.jpg';
-import gallery04 from '../assets/images/gallery04.jpg';
-import gallery05 from '../assets/images/gallery05.jpg';
-import gallery06 from '../assets/images/gallery06.jpg';
-import gallery07 from '../assets/images/gallery07.jpg';
-import gallery08 from '../assets/images/gallery08.jpg';
+import gallery01 from '../assets/images/gallery/catalog/gallery01.jpg';
+import gallery02 from '../assets/images/gallery/catalog/gallery02.jpg';
+import gallery03 from '../assets/images/gallery/catalog/gallery03.jpg';
+import gallery04 from '../assets/images/gallery/catalog/gallery04.jpg';
+import gallery05 from '../assets/images/gallery/catalog/gallery05.jpg';
+import gallery06 from '../assets/images/gallery/catalog/gallery06.jpg';
+import gallery07 from '../assets/images/gallery/catalog/gallery07.jpg';
+import gallery08 from '../assets/images/gallery/catalog/gallery08.jpg';
 
 
 class HomeIndex extends React.Component {
@@ -58,10 +58,10 @@ class HomeIndex extends React.Component {
     return (
       <Layout>
         <Helmet
-          title="Gatsby Starter - Forty"
+          title="TRANSFERRUM - BRÁNY | POHONY | PLOTY"
           meta={[
-            { name: 'description', content: 'Sample' },
-            { name: 'keywords', content: 'sample, something' },
+            { name: 'description', content: "oplotenie garážové brány plotové brány roletové výklopné dvojkrídlové závesné zásuvné samonosné kované ploty bránky stĺpy" },
+            { name: 'keywords', content: 'transferrum plotové brány oplotenia garážové brány ploty stara lubovna roletové výklopné dvojkrídlové závesné zásuvné samonosné kované ploty bránky stĺpy' },
           ]}
         />
         <Carousel />
@@ -122,7 +122,7 @@ Sme držiteľom oprávnenia na montáž a servis zvisle posuvných brán podľa 
 
               <div className=" about col-6">
                 <Link to="/oplotenia-domov">
-                  <img src={Layer3} alt="" />
+                  <img src={home02} alt="" />
                   <div className="">
                     <h4>
 Oplotenie pozemkov
@@ -136,7 +136,7 @@ pre domáci sektor
 
               <div className=" about col-6">
                 <Link to="/domov-brany">
-                  <img src={Layer4} alt="" />
+                  <img src={home01} alt="" />
                   <div className="">
                     <h4>
 Garážové brány
@@ -151,7 +151,7 @@ pre domáci sektor
 
               <div className=" about col-6">
                 <Link to="/priemysel-oplotenia">
-                  <img src={Layer5} alt="" />
+                  <img src={industry02} alt="" />
                   <div className="">
                     <h4>
 Oplotenie pozemkov
@@ -165,7 +165,7 @@ pre priemyselný  sektor
 
               <div className=" about col-6">
                 <Link to="/priemysel-brany">
-                  <img src={Layer1} alt="" />
+                  <img src={industry01} alt="" />
                   <div className="">
                     <h4>
 Garážové brány
