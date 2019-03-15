@@ -2,7 +2,7 @@ import React from 'react';
 import Helmet from 'react-helmet';
 import { Link } from 'gatsby';
 import Layout from '../components/layout';
-import Gallery from '../components/Gallery.js';
+import Gallery from '../components/gallery.js';
 
 const GalleryPage = props => (
   <Layout>
