@@ -1,6 +1,6 @@
 import React from 'react';
 import { render } from 'react-dom';
-import Gallery from 'react-photo-gallery';
+import ReactGallery from 'react-photo-gallery';
 import Lightbox from 'react-images';
 
 import gallery01 from '../assets/images/gallery/catalog/gallery01.jpg';
@@ -95,7 +95,7 @@ class GalleryComponent extends React.Component {
   render() {
     return (
       <div className="fit">
-        <Gallery photos={this.props.full ? photos : photos.slice(0, 6)} onClick={this.openLightbox} />
+        <ReactGallery photos={this.props.full ? photos : photos.slice(0, 6)} onClick={this.openLightbox} />
         <Lightbox
           images={photos}
           onClose={this.closeLightbox}

@@ -35,26 +35,8 @@ import gallery08 from '../assets/images/gallery/catalog/gallery08.jpg';
 
 
 class HomeIndex extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      percentage: 1,
-    };
-    this.increase = this.increase.bind(this);
-  }
-
-  increase() {
-    this.setState({ percentage: this.state.percentage + 1 });
-  }
 
   render() {
-    if (this.state.percentage < 60) {
-      setTimeout(this.increase, 100);
-    }
-
-
-    const percentage = this.state.percentage || 0;
-    console.log(this.state.percentage);
     return (
       <Layout>
         <Helmet
@@ -109,11 +91,7 @@ Sme držiteľom oprávnenia na montáž a servis zvisle posuvných brán podľa 
                 <li><Link to="/cenova-ponuka" className="button special-2">Napíšte nám</Link></li>
               </ul>
             </div>
-
-            {/* <img src={town} alt="" className="town" /> */}
-
           </section>
-
 
           <div className="inner" id="products" style={{ borderTopWidth: '0', paddingTop: '3rem' }}>
             <h2 style={{ textAlign: 'center', padding: '2rem' }}>Naše produkty</h2>
@@ -176,11 +154,8 @@ pre priemyselný  sektor
                   </div>
                 </Link>
               </div>
-
-
             </div>
           </div>
-
 
           <section className="inner">
             <h2 style={{ textAlign: 'center' }}>Pohony s ktorými pracujeme</h2>
@@ -218,9 +193,7 @@ pre priemyselný  sektor
 
             </div>
           </section>
-
         </div>
-
       </Layout>
     );
   }
