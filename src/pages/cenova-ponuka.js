@@ -2,7 +2,7 @@ import React from 'react';
 import Helmet from 'react-helmet';
 import Layout from '../components/layout';
 import BannerLanding from '../components/BannerLanding';
-import InputForm from '../components/InputForm';
+import InputForm from '../components/inputForm';
 
 
 const Landing = props => (
