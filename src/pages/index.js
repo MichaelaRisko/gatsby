@@ -5,7 +5,7 @@ import CircularProgressbar from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
 
 import Layout from '../components/layout';
-import Gallery from '../components/Gallery';
+import Gallery from '../components/Gallery.js';
 import Carousel from '../components/Carousel';
 import CarouselFeedback from '../components/CarouselFeedback';
 
