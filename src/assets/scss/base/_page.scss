@@ -14,6 +14,7 @@
 	// MSIE: Prevents scrollbar from overlapping content.
 		body {
 			-ms-overflow-style: scrollbar;
+			max-width: 100vw !important;
 		}
 
 	// Ensures page width is always >=320px.

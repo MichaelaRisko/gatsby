@@ -41,11 +41,59 @@ function SamplePrevArrow(props) {
 }
 
 export default class CustomArrows extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      width: 0
+    };
+    this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
+  }
+
+  componentDidMount() {
+    this.updateWindowDimensions();
+    window.addEventListener('resize', this.updateWindowDimensions);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.updateWindowDimensions);
+  }
+
+  updateWindowDimensions() {
+    this.setState({
+      width: window.innerWidth,
+    });
+  }
+
+  num2(){
+    if(this.state.width < 1000) {
+      return 4
+    }
+    if(this.state.width < 500) {
+      return 3
+    }
+    if(this.state.width < 400) {
+      return 2
+    }
+    return 5
+  }
+
+
   render() {
+    let num = 4;
+    if(this.state.width < 900) {
+      num = 3
+    }
+    if(this.state.width < 600) {
+      num = 2
+    }
+    if(this.state.width < 450) {
+      num = 1
+    }
+    
     const settings = {
       dots: true,
       infinite: true,
-      slidesToShow: 5,
+      slidesToShow: num,
       slidesToScroll: 1,
       speed: 3500,
       autoplaySpeed: 1500,

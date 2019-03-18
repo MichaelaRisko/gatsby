@@ -71,10 +71,16 @@
 		background-repeat: no-repeat;
 		background-size: contain;
 		padding-bottom: 7rem;
+
+		@include breakpoint(small) {
+			padding-bottom: 3rem;
+			background-size: 300%;
+		}
 	}
 
 	.logo_full {
 		display: flex;
+		max-width: 100vw;
 
 		img {
 			max-height: 4.5rem;
@@ -87,10 +93,12 @@
 			flex-direction: column;
 			img {
 			padding-right: 0;
+			max-height: 3.3rem;
 			
 			}
 			img:first-child {
 				padding-bottom: 0rem;
+				max-height: 2rem;
 			}
 			
 		}

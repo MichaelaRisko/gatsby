@@ -98,7 +98,7 @@ Sme držiteľom oprávnenia na montáž a servis zvisle posuvných brán podľa 
 
             <div className="grid-wrapper">
 
-              <div className=" about col-6">
+              <div className="about col-6">
                 <Link to="/oplotenia-domov">
                   <img src={home02} alt="" />
                   <div className="">
@@ -107,7 +107,10 @@ Oplotenie pozemkov
                       <br />
 pre domáci sektor
                     </h4>
-                    <p>Felis sttis eget. tempus ed um. Bland iaculis volutpat ac adipiscing accumsan eu faucibus lorem ipsum.</p>
+                    <p>Zásuvné samonosné,
+Zásuvné,
+Dvojkrídlové,
+Dvojkrídlové skladacie</p>
                   </div>
                 </Link>
               </div>
@@ -122,7 +125,11 @@ Garážové brány
 pre domáci sektor
                       {' '}
                     </h4>
-                    <p>Felis sttis eget. tempus ed um. Bland iaculis volutpat ac adipiscing accumsan eu faucibus lorem ipsum.</p>
+                    <p>Sekčné,
+Roletové,
+Výklopné,
+Dvojkrídlové,
+Závesné</p>
                   </div>
                 </Link>
               </div>
@@ -136,7 +143,11 @@ Oplotenie pozemkov
                       <br />
 pre priemyselný  sektor
                     </h4>
-                    <p>Felis sttis eget. tempus ed um. Bland iaculis volutpat ac adipiscing accumsan eu faucibus lorem ipsum.</p>
+                    <p>Kované ploty,
+Plotové segmenty,
+Bránky,
+Stĺpy,
+Príslušenstvo</p>
                   </div>
                 </Link>
               </div>
@@ -150,7 +161,11 @@ Garážové brány
                       <br />
 pre priemyselný  sektor
                     </h4>
-                    <p>Felis sttis eget. tempus ed um. Bland iaculis volutpat ac adipiscing accumsan eu faucibus lorem ipsum.</p>
+                    <p>Sekčné,
+Roletové,
+Výklopné,
+Dvojkrídlové,
+Závesné</p>
                   </div>
                 </Link>
               </div>
@@ -172,7 +187,7 @@ pre priemyselný  sektor
             </div>
           </section>
 
-          <section id="gallery" style={{ paddingTop: '5rem' }}>
+          <section id="gallery" style={{ paddingTop: '1rem' }}>
             <div className="inner gallery">
               <h2>Galéria</h2>
               <Gallery full={false} />

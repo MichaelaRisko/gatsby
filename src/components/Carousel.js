@@ -9,13 +9,15 @@ import gallery14 from '../assets/images/gallery/catalog/gallery14.jpg';
 import gallery21 from '../assets/images/gallery/catalog/gallery21.jpg';
 import gallery29 from '../assets/images/gallery/catalog/gallery29.jpg';
 import gallery16 from '../assets/images/gallery/catalog/gallery16.jpg';
+import img03 from '../assets/images/gallery/003.jpg';
+
 
 function SampleNextArrow(props) {
   const { className, style, onClick } = props;
   return (
     <div
       className={className}
-      style={{ ...style, display: 'block' }}
+      style={{ ...style,  }}
       onClick={onClick}
     />
   );
@@ -26,7 +28,7 @@ function SamplePrevArrow(props) {
   return (
     <div
       className={className}
-      style={{ ...style, display: 'block' }}
+      style={{ ...style, }}
       onClick={onClick}
     />
   );
@@ -35,7 +37,8 @@ function SamplePrevArrow(props) {
 const BgImage = ({ url, ...rest }) => (
   <div
     style={{
-      minHeight: '75vh',
+      minHeight: '70vh',
+      maxWidth: '100vw !important',
       backgroundImage: `url(${url})`,
       backgroundRepeat: 'no-repeat',
       backgroundPosition: 'center',
@@ -82,6 +85,7 @@ export default class Carousel extends Component {
     return (
       <div className="carousel no-padding">
         <Slider {...settings}>
+          {bannerSlide(img03)}
           {bannerSlide(gallery21)}
           {bannerSlide(gallery14)}
           {bannerSlide(gallery07)}

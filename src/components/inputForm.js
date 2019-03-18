@@ -5,6 +5,7 @@ class InputForm extends React.Component {
     super(props);
     this.state = {
       what: null,
+      agree: false,
     };
   }
 
@@ -50,28 +51,28 @@ class InputForm extends React.Component {
 
         <div className="select-wrapper mb-5">
           <label>typ brány</label>
-          <select name="demo-category" id="demo-category">
-            <option defaultValue="">- Vyberte si typ brány -</option>
-            <option value="1">Segmentová</option>
-            <option value="1">Roletová</option>
-            <option value="1">Dvojkrídlová zateplená</option>
-            <option value="1">Dvojkrídlová nezateplená</option>
-            <option value="1">Výklopná zateplená</option>
-            <option value="1">Výklopná nezateplená</option>
-            <option value="1">Výklopná bez výplne</option>
+          <select name="typ_brany" id="typ_brany">
+            <option defaultValue="nevybrata">- Vyberte si typ brány -</option>
+            <option value="Segmentová">Segmentová</option>
+            <option value="Roletová">Roletová</option>
+            <option value="Dvojkrídlová zateplená">Dvojkrídlová zateplená</option>
+            <option value="Dvojkrídlová nezateplená">Dvojkrídlová nezateplená</option>
+            <option value="Výklopná zateplená">Výklopná zateplená</option>
+            <option value="Výklopná nezateplená">Výklopná nezateplená</option>
+            <option value="Výklopná bez výplne">Výklopná bez výplne</option>
           </select>
         </div>
 
         <div className="select-wrapper mb-5">
           <label>farba</label>
-          <select name="demo-category" id="demo-category">
-            <option defaultValue="">- Vyberte si farbu -</option>
-            <option value="1">Biela RAL 9016</option>
-            <option value="1">Hnedá RAL 8014</option>
-            <option value="1">Sivá RAL 7016</option>
-            <option value="1">Zlatý dub</option>
-            <option value="1">Orech</option>
-            <option value="1">Celá paleta RAL a motívy podobné drevu</option>
+          <select name="farba_brany" id="farba_brany">
+            <option defaultValue="nevybrata">- Vyberte si farbu -</option>
+            <option value="Biela RAL 9016">Biela RAL 9016</option>
+            <option value="Hnedá RAL 8014">Hnedá RAL 8014</option>
+            <option value="Sivá RAL 7016">Sivá RAL 7016</option>
+            <option value="Zlatý dub">Zlatý dub</option>
+            <option value="Orech">Orech</option>
+            <option value="Celá paleta RAL a motívy podobné drevu">Celá paleta RAL a motívy podobné drevu</option>
 
           </select>
         </div>
@@ -123,7 +124,8 @@ class InputForm extends React.Component {
       <section id="contact">
         <div className="inner">
           <section>
-            <form method="post" action="#">
+            <form name="contact-transferrum" method="post" action="/" data-netlify="true" data-netlify-honeypot="bot-field">
+            <input type="hidden" name="form-name" value="contact-transferrum" />
               <div className="field">
                 <label htmlFor="name">Meno a Priezvisko</label>
                 <input type="text" name="name" id="name" />
@@ -137,8 +139,8 @@ class InputForm extends React.Component {
                 <input type="text" name="email" id="email" />
               </div>
               <div className="field">
-                <label htmlFor="place">Miesto montáže</label>
-                <input type="text" name="place" id="place" />
+                <label htmlFor="miesto">Miesto montáže</label>
+                <input type="text" name="miesto" id="miesto" />
               </div>
               <div className="field">
                 <label htmlFor="">Cenová ponuka pre</label>
@@ -160,15 +162,23 @@ class InputForm extends React.Component {
 
               <div className="field">
                 <label htmlFor="message">Komentár</label>
-                <textarea name="message" id="message" rows="6" placeholder="Do komentára uveďte prosím farbu a vzor" />
+                <textarea name="message" id="message" rows="6" placeholder={this.state.what === 'brana' ? "Do komentára uveďte prosím vzor" : "Do komentára uveďte prosím farbu a vzor"} />
               </div>
               <div>
                 <p>
-Kompletnú ponuku nájdete na
-                  <a href="https://www.wisniowski.pl/cz" target="_blank"><strong>https://www.wisniowski.pl/cz</strong></a>
+Kompletnú ponuku nájdete na 
+                  <a href="https://www.wisniowski.pl/cz" target="_blank"><strong> https://www.wisniowski.pl/cz</strong></a>
                 </p>
-                {' '}
+
+            <input type="checkbox" id="suhlas" name="suhlas" onChange={() => this.setState({ agree: !this.state.agree })} />
+            <label htmlFor="suhlas">Súhlasím so spracovaním osobných údajov v zmysle zákona o ochrane osobných údajov č. 18/2018 Z. z. v znení neskorších predpisov</label>
+  
               </div>
+              {this.state.agree && <p>
+Viac informácií nájdete v sekcii  
+                  <a href="/spracovanie-osobnych-udajov" target="_blank"><strong> spracovanie osobných údajov </strong></a>
+                </p>}
+
               <ul className="actions">
                 <li><input type="submit" value="odoslať" /></li>
                 <li><input type="reset" value="vymazať" className="special" onClick={() => this.setState({ what: null })} /></li>
@@ -180,7 +190,8 @@ Kompletnú ponuku nájdete na
               <div className="contact-method">
                 <span className="icon alt fa-envelope" />
                 <h3>Email</h3>
-                <span>info@transferrum.sk</span>
+                <span>info@transferrum.sk <br/>
+                  martin@transferrum.sk</span>
               </div>
             </section>
             <section>

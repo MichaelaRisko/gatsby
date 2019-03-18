@@ -11,23 +11,18 @@ class Header extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      width: 0,
-      color: '',
+      width: 0
     };
     this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
-    this.handleScroll = this.handleScroll.bind(this);
   }
 
   componentDidMount() {
-    this.handleScroll();
     this.updateWindowDimensions();
     window.addEventListener('resize', this.updateWindowDimensions);
-    window.addEventListener('scroll', this.handleScroll);
   }
 
   componentWillUnmount() {
     window.removeEventListener('resize', this.updateWindowDimensions);
-    window.removeEventListener('scroll', this.handleScroll);
   }
 
   updateWindowDimensions() {
@@ -36,17 +31,9 @@ class Header extends React.Component {
     });
   }
 
-  handleScroll() {
-    if (window.scrollY > 400) {
-      this.setState({ color: 'black' });
-    } else {
-      this.setState({ color: 'white' });
-    }
-  }
-
   render() {
     let navigation;
-    if (this.state.width > 780) {
+    if (this.state.width > 900) {
       navigation = (
         <nav className="scroll-navigation">
 

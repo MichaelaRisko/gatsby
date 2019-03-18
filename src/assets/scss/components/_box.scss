@@ -30,34 +30,24 @@
 		@include vendor('display', 'flex');	
 		max-width: 100%;
 		padding: 2rem;
-
-			@include breakpoint(medium) {
-				img {
-					margin: 0 0.5rem;
-				}
-			}
-
-			@include breakpoint(small) {
-				flex-direction: column;
-			}
-
-			@include breakpoint(xsmall) {
-				//padding: 2.5rem 0;
-			}
-
-
-
-
-
-		@include breakpoint(xsmall) {
-			flex-direction: column;
-
-
-		}
+		flex-wrap: wrap;
 
 		img {
 			height: 6rem;
 		}
+
+		@include breakpoint(large) {
+			img {
+		height: 4rem;
+			}
+		}
+
+			@include breakpoint(medium) {
+				img {
+					margin: 0.5rem 0.5rem;
+				}
+			}
+
 	}
 
 	.about a{
@@ -105,4 +95,34 @@
 		p:active {
 			color: _palette(fg) !important;
 		}
+
+		@include breakpoint(large) {
+			flex-direction: column;
+			img {
+				padding-right: 0;
+				padding-bottom: 1rem;
+			}
+		}
+
+		@include breakpoint(medium) {
+			flex-direction: row;
+			img {
+				padding-right: 2rem;
+		
+			}
+		}
+
+		@include breakpoint(xsmall) {
+			padding: 1.5rem;
+				flex-direction: column;
+				div > *{
+					text-align: center;
+				}
+				img {
+					width: 7rem;
+					padding-right: 0;
+				}
+			
+		}
+
 	}

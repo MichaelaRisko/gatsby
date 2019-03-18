@@ -30,14 +30,20 @@
 	@mixin inner {
 		> .inner {
 			@include padding(3em, 0);
+			max-width: 70vw;
+			width: 70vw;
 			margin: 0 auto;
-			max-width: _size(inner);
-			width: calc(100% - 6em);
+			display: flex;
+			flex-direction: column;
+
 
 			@include breakpoint(small) {
 				@include padding(3em, 0);
-				width: calc(100% - 3em);
+				width: 90vw;;
+				max-width: 90vw;;
 			}
+
+			
 		}
 	}
 
