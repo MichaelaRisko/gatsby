@@ -157,8 +157,103 @@ class InputForm extends React.Component {
                   <label htmlFor="oplotenie"><strong>Oplotenie</strong></label>
                 </div>
               </div>
-              {this.state.what === 'brana' && brana() }
-              {this.state.what === 'oplotenie' && oplotenie() }
+
+              {this.state.what && <div>
+
+                                  <div className="field">
+                              <label>Rozmer Brány</label>
+                            </div>
+                            <div className="field ">
+                              <label>Šírka(m)</label>
+                              <input type="text" name="width" id="width" />
+                            </div>
+                            <div className="field ">
+                              <label>Výška(m)</label>
+                              <input type="text" name="height" id="height" />
+                            </div>
+
+                            <div className="select-wrapper mb-5">
+                              <label>typ brány</label>
+                              <select name="typ_brany" id="typ_brany">
+                                <option defaultValue="nevybrata">- Vyberte si typ brány -</option>
+                                <option value="Segmentová">Segmentová</option>
+                                <option value="Roletová">Roletová</option>
+                                <option value="Dvojkrídlová zateplená">Dvojkrídlová zateplená</option>
+                                <option value="Dvojkrídlová nezateplená">Dvojkrídlová nezateplená</option>
+                                <option value="Výklopná zateplená">Výklopná zateplená</option>
+                                <option value="Výklopná nezateplená">Výklopná nezateplená</option>
+                                <option value="Výklopná bez výplne">Výklopná bez výplne</option>
+                              </select>
+                            </div>
+
+                            <div className="select-wrapper mb-5">
+                              <label>farba</label>
+                              <select name="farba_brany" id="farba_brany">
+                                <option defaultValue="nevybrata">- Vyberte si farbu -</option>
+                                <option value="Biela RAL 9016">Biela RAL 9016</option>
+                                <option value="Hnedá RAL 8014">Hnedá RAL 8014</option>
+                                <option value="Sivá RAL 7016">Sivá RAL 7016</option>
+                                <option value="Zlatý dub">Zlatý dub</option>
+                                <option value="Orech">Orech</option>
+                                <option value="Celá paleta RAL a motívy podobné drevu">Celá paleta RAL a motívy podobné drevu</option>
+
+                              </select>
+                            </div>
+              </div>}
+
+            <div>
+        <div className="field">
+          <label htmlFor="email">Rozmer oplotenia</label>
+        </div>
+        <div className="field half first ">
+          <label htmlFor="email">Šírka(m)</label>
+          <input type="text" name="width" id="width" />
+        </div>
+        <div className="field half">
+          <label htmlFor="email">Výška(m)</label>
+          <input type="text" name="height" id="height" />
+        </div>
+        <div className="field">
+          <label htmlFor="">Typ brány pri oplotení</label>
+        </div>
+
+        <div className="field">
+          <input type="radio" id="brana_dvojkridlova" name="typ_brany" />
+          <label htmlFor="brana_dvojkridlova">Brána Dvojkrídlová</label>
+        </div>
+
+
+        <div className="field">
+          <input type="radio" id="brana_samonosta_posuvna" name="typ_brany" />
+          <label htmlFor="brana_samonosta_posuvna">Brána samonostná posuvná</label>
+        </div>
+
+
+        <div className="field">
+          <input type="radio" id="brana_samonosta_posuvna_bez_vyplne" name="typ_brany" />
+          <label htmlFor="brana_samonosta_posuvna_bez_vyplne">Brána samonostná posuvná bez výplne</label>
+        </div>
+
+        </div>
+
+        <div className="field">
+          <label htmlFor="">Typ ovládania</label>
+        </div>
+
+        <div className="col-4">
+          <div className="field half  ">
+            <input type="radio" id="rucne" name="typ_ovladania" />
+            <label htmlFor="rucne">Ručné</label>
+          </div>
+        </div>
+
+
+        <div className="col-4">
+          <div className="field half  ">
+            <input type="radio" id="automaticke" name="typ_ovladania" />
+            <label htmlFor="automaticke">Automatické</label>
+          </div>
+        </div>
 
               <div className="field">
                 <label htmlFor="message">Komentár</label>
@@ -180,7 +275,7 @@ Viac informácií nájdete v sekcii
                 </p>}
 
               <ul className="actions">
-                <li><input type="submit" value="odoslať" /></li>
+                <li><input type="submit" value="odoslať"/></li>
                 <li><input type="reset" value="vymazať" className="special" onClick={() => this.setState({ what: null })} /></li>
               </ul>
             </form>
