@@ -315,7 +315,7 @@ class InputForm extends React.Component {
 
              
 
-              {offer === "garazova brana" && 
+             
             <div>
             <div className="field">
                     <label>Rozmery {this.state.offer === "garazova brana" ? 'brány' : 'oplotenia'}</label>
@@ -381,9 +381,7 @@ class InputForm extends React.Component {
             </div>
           </div>
             
-            
-            }	
-               {offer === "oplotenie" &&  
+           
               
               <div>
         <div className="field">
@@ -458,7 +456,7 @@ class InputForm extends React.Component {
         </div>
       </div>
               
-              }
+             
                
               <div className="field">
                 <label htmlFor="message">Komentár</label>
