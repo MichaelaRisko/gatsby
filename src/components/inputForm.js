@@ -45,7 +45,7 @@ class InputForm extends React.Component {
   render() {
     
     const { name, email, phone, place, offer, sizeHeight, sizeWidth, control, fenceGateType, message, agree } = this.state;
-    const ovladanie = () => (
+    const ovladanie = (
       <div>
         <div className="field"><label>Typ ovládania</label></div>
         <div className="col-4">
@@ -59,8 +59,6 @@ class InputForm extends React.Component {
              Ručné</label>
           </div>
         </div>
-
-
         <div className="col-4">
           <div className="field half  ">
           <label className={control === 'automaticke' ? "form-label form-label-checked" : "form-label"}>
@@ -75,7 +73,7 @@ class InputForm extends React.Component {
       </div>
     );
 
-    const rozmer = () => (
+    const rozmer = (
       <div>
       <div className="field">
                 <label>Rozmery {this.state.offer === "garazova brana" ? 'brány' : 'oplotenia'}</label>
@@ -92,9 +90,9 @@ class InputForm extends React.Component {
     )
 
 
-    const brana = () => (
+    const brana = (
       <div>
-        {rozmer()}
+        {rozmer}
         <div className="select-wrapper mb-5">
           <label>typ brány</label>
           <select name="gateType"  onChange={this.handleChange}>
@@ -122,14 +120,13 @@ class InputForm extends React.Component {
 
           </select>
         </div>
-        {ovladanie()}
-
+        {ovladanie}
       </div>
     );
 
-    const oplotenie = () => (
+    const oplotenie = (
       <div>
-        {rozmer()}
+        {rozmer}
         <div className="field">
           <label>Typ brány pri oplotení</label>
         </div>
@@ -165,7 +162,7 @@ class InputForm extends React.Component {
                   onChange={this.handleChange} />
           Brána samonostná posuvná bez výplne</label>
         </div>
-        {ovladanie()}
+        {ovladanie}
       </div>
 
     );
@@ -251,8 +248,8 @@ class InputForm extends React.Component {
 
              
 
-              {offer === "garazova brana" && brana() }	
-               {offer === "oplotenie" &&  oplotenie() }
+              {offer === "garazova brana" && brana }	
+               {offer === "oplotenie" &&  oplotenie }
                
               <div className="field">
                 <label htmlFor="message">Komentár</label>
