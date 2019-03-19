@@ -1,5 +1,4 @@
 import React from 'react';
-import { render } from 'react-dom';
 import ReactGallery from 'react-photo-gallery';
 import Lightbox from 'react-images';
 
@@ -20,16 +19,8 @@ import catalog15 from '../assets/images/gallery/catalog/gallery15.jpg';
 import catalog16 from '../assets/images/gallery/catalog/gallery16.jpg';
 import catalog17 from '../assets/images/gallery/catalog/gallery17.jpg';
 import catalog18 from '../assets/images/gallery/catalog/gallery18.jpg';
-import catalog19 from '../assets/images/gallery/catalog/gallery19.jpg';
-import catalog20 from '../assets/images/gallery/catalog/gallery20.jpg';
 import catalog21 from '../assets/images/gallery/catalog/gallery21.jpg';
-import catalog22 from '../assets/images/gallery/catalog/gallery22.jpg';
-import catalog23 from '../assets/images/gallery/catalog/gallery23.jpg';
-import catalog24 from '../assets/images/gallery/catalog/gallery24.jpg';
-import catalog25 from '../assets/images/gallery/catalog/gallery25.jpg';
 import catalog26 from '../assets/images/gallery/catalog/gallery26.jpg';
-import catalog27 from '../assets/images/gallery/catalog/gallery27.jpg';
-import catalog28 from '../assets/images/gallery/catalog/gallery28.jpg';
 import catalog29 from '../assets/images/gallery/catalog/gallery29.jpg';
 
 
@@ -52,7 +43,7 @@ const mobil = [
   { src: img008, width: 3, height: 2 },
   { src: img006, width: 2, height: 2 },
   { src: img007, width: 4, height: 2 },
-  { src: img005, width: 2, height: 2 } 
+  { src: img005, width: 2, height: 2 },
 ];
 
 const photos = [
@@ -114,12 +105,11 @@ class GalleryComponent extends React.Component {
     });
   }
 
-   result()  {
-    if(this.props.full) {
-      return mobil.concat(photos)
-    } else {
-      return photos.slice(0, 6)
+  result() {
+    if (this.props.full) {
+      return mobil.concat(photos);
     }
+    return photos.slice(0, 6);
   }
 
   render() {

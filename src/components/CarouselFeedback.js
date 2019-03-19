@@ -44,7 +44,7 @@ export default class CustomArrows extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      width: 0
+      width: 0,
     };
     this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
   }
@@ -64,32 +64,18 @@ export default class CustomArrows extends Component {
     });
   }
 
-  num2(){
-    if(this.state.width < 1000) {
-      return 4
-    }
-    if(this.state.width < 500) {
-      return 3
-    }
-    if(this.state.width < 400) {
-      return 2
-    }
-    return 5
-  }
-
-
   render() {
     let num = 4;
-    if(this.state.width < 900) {
-      num = 3
+    if (this.state.width < 900) {
+      num = 3;
     }
-    if(this.state.width < 600) {
-      num = 2
+    if (this.state.width < 600) {
+      num = 2;
     }
-    if(this.state.width < 450) {
-      num = 1
+    if (this.state.width < 450) {
+      num = 1;
     }
-    
+
     const settings = {
       dots: true,
       infinite: true,
@@ -106,46 +92,46 @@ export default class CustomArrows extends Component {
         <h2 style={{ textAlign: 'center' }}>Naši spokojní zákazníci</h2>
         <Slider {...settings}>
           <div>
-            <img src={customer01}/>
+            <img src={customer01} alt="" />
           </div>
           <div>
-            <img src={customer14}/>
+            <img src={customer14} alt="" />
           </div>
           <div>
-            <img src={customer03}/>
+            <img src={customer03} alt="" />
           </div>
           <div>
-            <img src={customer10}/>
+            <img src={customer10} alt="" />
           </div>
           <div>
-            <img src={customer05}/>
+            <img src={customer05} alt="" />
           </div>
           <div>
-            <img src={customer12}/>
+            <img src={customer12} alt="" />
           </div>
           <div>
-            <img src={customer07}/>
+            <img src={customer07} alt="" />
           </div>
           <div>
-            <img src={customer11}/>
+            <img src={customer11} alt="" />
           </div>
           <div>
-            <img src={customer06}/>
+            <img src={customer06} alt="" />
           </div>
           <div>
-            <img src={customer13}/>
+            <img src={customer13} alt="" />
           </div>
           <div>
-            <img src={customer04}/>
+            <img src={customer04} alt="" />
           </div>
           <div>
-            <img src={customer08}/>
+            <img src={customer08} alt="" />
           </div>
           <div>
-            <img src={customer02}/>
+            <img src={customer02} alt="" />
           </div>
           <div>
-            <img src={customer09}/>
+            <img src={customer09} alt="" />
           </div>
         </Slider>
       </div>

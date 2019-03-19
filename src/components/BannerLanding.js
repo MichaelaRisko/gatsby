@@ -1,6 +1,6 @@
 import React from 'react';
 
-const BannerLanding = props => (
+const BannerLanding = () => (
   <section id="banner">
     <div className="inner">
       <header className="major">

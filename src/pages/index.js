@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'gatsby';
 import Helmet from 'react-helmet';
-import CircularProgressbar from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
 
 import Layout from '../components/layout';
@@ -24,25 +23,14 @@ import home02 from '../assets/images/icons/home02.png';
 import home01 from '../assets/images/icons/home01.png';
 import industry02 from '../assets/images/icons/industry02.png';
 
-import gallery01 from '../assets/images/gallery/catalog/gallery01.jpg';
-import gallery02 from '../assets/images/gallery/catalog/gallery02.jpg';
-import gallery03 from '../assets/images/gallery/catalog/gallery03.jpg';
-import gallery04 from '../assets/images/gallery/catalog/gallery04.jpg';
-import gallery05 from '../assets/images/gallery/catalog/gallery05.jpg';
-import gallery06 from '../assets/images/gallery/catalog/gallery06.jpg';
-import gallery07 from '../assets/images/gallery/catalog/gallery07.jpg';
-import gallery08 from '../assets/images/gallery/catalog/gallery08.jpg';
-
-
 class HomeIndex extends React.Component {
-
   render() {
     return (
       <Layout>
         <Helmet
           title="TRANSFERRUM - BRÁNY | POHONY | PLOTY"
           meta={[
-            { name: 'description', content: "oplotenie garážové brány plotové brány roletové výklopné dvojkrídlové závesné zásuvné samonosné kované ploty bránky stĺpy" },
+            { name: 'description', content: 'oplotenie garážové brány plotové brány roletové výklopné dvojkrídlové závesné zásuvné samonosné kované ploty bránky stĺpy' },
             { name: 'keywords', content: 'transferrum plotové brány oplotenia garážové brány ploty stara lubovna roletové výklopné dvojkrídlové závesné zásuvné samonosné kované ploty bránky stĺpy' },
           ]}
         />
@@ -55,38 +43,55 @@ class HomeIndex extends React.Component {
                 <img src={logo_dlhe} alt="" />
               </div>
 
-              <p style={{marginBottom: '0.5rem'}}>
-              Firma Transferrum vznikla v roku 1993, postupom času sme sa zamerali na <strong>dodávky a montáž
-garážových brán a oplotení</strong>. <br/>Od roku 2003 sme oficiálnym zástupcom firmy Wisniowski Sp. z
+              <p style={{ marginBottom: '0.5rem' }}>
+              Firma Transferrum vznikla v roku 1993, postupom času sme sa zamerali na
+                {' '}
+                <strong>
+dodávky a montáž
+garážových brán a oplotení
+                </strong>
+.
+                {' '}
+                <br />
+Od roku 2003 sme oficiálnym zástupcom firmy Wisniowski Sp. z
 o.o. S.K.A. 33-311 Wieloglowy 153, Poľsko na slovenskom trhu.
 Z jej produkcie dodávame a montujeme pre súkromný a priemyselný sektor:
               </p>
-              <ul className="product-list"><strong>Garážové brány</strong>
-                  <li>Sekčné</li>
-                  <li>Roletové</li>
-                  <li>Výklopné</li>
-                  <li>Dvojkrídlové</li>
-                  <li>Závesné</li>
+              <ul className="product-list">
+                <strong>Garážové brány</strong>
+                <li>Sekčné</li>
+                <li>Roletové</li>
+                <li>Výklopné</li>
+                <li>Dvojkrídlové</li>
+                <li>Závesné</li>
               </ul>
-              <ul className="product-list"><strong>Plotové brány</strong>
-                  <li>Zásuvné samonosné</li>
-                  <li>Zásuvné</li>
-                  <li>Dvojkrídlové</li>
-                  <li>Dvojkrídlové skladacie</li>
+              <ul className="product-list">
+                <strong>Plotové brány</strong>
+                <li>Zásuvné samonosné</li>
+                <li>Zásuvné</li>
+                <li>Dvojkrídlové</li>
+                <li>Dvojkrídlové skladacie</li>
               </ul>
-              <ul className="product-list"><strong>Oplotenie</strong>
-                  <li>Priemyselné segmenty</li>
-                  <li>Kované ploty</li>
-                  <li>Plotové segmenty</li>
-                  <li>Bránky</li>
-                  <li>Stĺpy</li>
-                  <li>Príslušenstvo</li>
+              <ul className="product-list">
+                <strong>Oplotenie</strong>
+                <li>Priemyselné segmenty</li>
+                <li>Kované ploty</li>
+                <li>Plotové segmenty</li>
+                <li>Bránky</li>
+                <li>Stĺpy</li>
+                <li>Príslušenstvo</li>
               </ul>
-              <p style={{marginBottom: '0.5rem'}}>Automatizácia a pohony značky AW, BFT, GFA, Nice, Came, Somfy, Sommer.<br/>Ďalej ponúkame predaj a montáž závor.</p>
+              <p style={{ marginBottom: '0.5rem' }}>
+Automatizácia a pohony značky AW, BFT, GFA, Nice, Came, Somfy, Sommer.
+                <br />
+Ďalej ponúkame predaj a montáž závor.
+              </p>
               <p>
-Záručný a pozáručný servis výrobkov AW – poradenstvo.<br/>
+Záručný a pozáručný servis výrobkov AW – poradenstvo.
+                <br />
 Sme držiteľom oprávnenia na montáž a servis zvisle posuvných brán podľa vyhlášky 508/2009
-– skupina BF.</p>
+– skupina BF.
+              </p>
               <ul className="actions" style={{ margin: '0' }}>
                 <li><Link to="/cenova-ponuka" className="button special-2">Napíšte nám</Link></li>
               </ul>
@@ -107,10 +112,12 @@ Oplotenie pozemkov
                       <br />
 pre domáci sektor
                     </h4>
-                    <p>Zásuvné samonosné,
+                    <p>
+Zásuvné samonosné,
 Zásuvné,
 Dvojkrídlové,
-Dvojkrídlové skladacie</p>
+Dvojkrídlové skladacie
+                    </p>
                   </div>
                 </Link>
               </div>
@@ -125,11 +132,13 @@ Garážové brány
 pre domáci sektor
                       {' '}
                     </h4>
-                    <p>Sekčné,
+                    <p>
+Sekčné,
 Roletové,
 Výklopné,
 Dvojkrídlové,
-Závesné</p>
+Závesné
+                    </p>
                   </div>
                 </Link>
               </div>
@@ -143,11 +152,13 @@ Oplotenie pozemkov
                       <br />
 pre priemyselný  sektor
                     </h4>
-                    <p>Kované ploty,
+                    <p>
+Kované ploty,
 Plotové segmenty,
 Bránky,
 Stĺpy,
-Príslušenstvo</p>
+Príslušenstvo
+                    </p>
                   </div>
                 </Link>
               </div>
@@ -161,11 +172,13 @@ Garážové brány
                       <br />
 pre priemyselný  sektor
                     </h4>
-                    <p>Sekčné,
+                    <p>
+Sekčné,
 Roletové,
 Výklopné,
 Dvojkrídlové,
-Závesné</p>
+Závesné
+                    </p>
                   </div>
                 </Link>
               </div>

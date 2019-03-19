@@ -11,7 +11,7 @@ class Header extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      width: 0
+      width: 0,
     };
     this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
   }

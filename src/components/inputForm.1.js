@@ -1,96 +1,100 @@
 import React from 'react';
 
-const encode = (data) => {
-  return Object.keys(data)
-      .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
-      .join("&");
-}
+const encode = data => Object.keys(data)
+  .map(key => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`)
+  .join('&');
 
 
 class InputForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      name: "", 
-      email: "", 
-      message: "",
-      phone: "",
-      place: "",
-      offer: "",
-      sizeHeight: "",
-      sizeWidth: "",
-      control: "",
-      fenceGateType: "",
-      gateColor: "",
-      gateType:"",
+      name: '',
+      email: '',
+      message: '',
+      phone: '',
+      place: '',
+      offer: '',
+      sizeHeight: '',
+      sizeWidth: '',
+      control: '',
+      fenceGateType: '',
+      gateColor: '',
+      gateType: '',
       agree: false,
     };
   }
 
 
-  handleSubmit = e => {
-    fetch("/", {
-      method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: encode({ "form-name": "contact", ...this.state })
+  handleSubmit = (e) => {
+    fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: encode({ 'form-name': 'contact', ...this.state }),
     })
-      .then(() => alert("Success!"))
+      .then(() => alert('Success!'))
       .catch(error => alert(error));
 
     e.preventDefault();
   };
 
-  handleChange = e => {
-    if (e.target.name  === "offer" && e.target.name != this.state.offer && this.state.offer != null){
+  handleChange = (e) => {
+    if (e.target.name === 'offer' && e.target.name != this.state.offer && this.state.offer != null) {
       this.setState({
-        name: "", 
-        email: "", 
-        message: "",
-        phone: "",
-        place: "",
+        name: '',
+        email: '',
+        message: '',
+        phone: '',
+        place: '',
         offer: e.target.value,
-        sizeHeight: "",
-        sizeWidth: "",
-        control: "",
-        fenceGateType: "",
-        gateColor: "",
-        gateType:""
-      })
+        sizeHeight: '',
+        sizeWidth: '',
+        control: '',
+        fenceGateType: '',
+        gateColor: '',
+        gateType: '',
+      });
     } else {
       this.setState({ [e.target.name]: e.target.value });
-    } 
+    }
   }
 
-  
 
   render() {
-    
-    const { name, email, phone, place, offer, sizeHeight, sizeWidth, control, fenceGateType, message, agree } = this.state;
+    const {
+      name, email, phone, place, offer, sizeHeight, sizeWidth, control, fenceGateType, message, agree,
+    } = this.state;
     const ovladanie = () => (
       <div>
         <div className="field"><label>Typ ovládania</label></div>
         <div className="col-4">
           <div className="field half">
-          <label className={control === 'rucne' ? "form-label form-label-checked" : "form-label"}>
-          <input type="radio" 
-                  name={'control'}
-                  value={"rucne"}
-                  checked={control === "rucne"} 
-                  onChange={this.handleChange} />
-             Ručné</label>
+            <label className={control === 'rucne' ? 'form-label form-label-checked' : 'form-label'}>
+              <input
+                type="radio"
+                name="control"
+                value="rucne"
+                checked={control === 'rucne'}
+                onChange={this.handleChange}
+              />
+             Ručné
+            </label>
           </div>
         </div>
 
 
         <div className="col-4">
           <div className="field half  ">
-          <label className={control === 'automaticke' ? "form-label form-label-checked" : "form-label"}>
-          <input type="radio"
-                  name={'control'}
-                  value={'automaticke'} 
-                  checked={control === 'automaticke'} 
-                  onChange={this.handleChange} />
-           Automatické</label>
+            <label className={control === 'automaticke' ? 'form-label form-label-checked' : 'form-label'}>
+              <input
+                type="radio"
+                name="control"
+                value="automaticke"
+                checked={control === 'automaticke'}
+                onChange={this.handleChange}
+              />
+           Automatické
+            </label>
           </div>
         </div>
       </div>
@@ -98,19 +102,22 @@ class InputForm extends React.Component {
 
     const rozmer = () => (
       <div>
-      <div className="field">
-                <label>Rozmery {this.state.offer === "garazova brana" ? 'brány' : 'oplotenia'}</label>
-              </div>
-              <div className="field ">
-                <label>Šírka(m)</label>
-                <input type="text" name="sizeWidth" value={sizeWidth} onChange={this.handleChange}/>
-              </div>
-              <div className="field ">
-                <label>Výška(m)</label>
-                <input type="text" name="sizeHeight" value={sizeHeight} onChange={this.handleChange}/>
-              </div>
+        <div className="field">
+          <label>
+Rozmery
+            {this.state.offer === 'garazova brana' ? 'brány' : 'oplotenia'}
+          </label>
+        </div>
+        <div className="field ">
+          <label>Šírka(m)</label>
+          <input type="text" name="sizeWidth" value={sizeWidth} onChange={this.handleChange} />
+        </div>
+        <div className="field ">
+          <label>Výška(m)</label>
+          <input type="text" name="sizeHeight" value={sizeHeight} onChange={this.handleChange} />
+        </div>
       </div>
-    )
+    );
 
 
     const brana = () => (
@@ -118,7 +125,7 @@ class InputForm extends React.Component {
         {rozmer()}
         <div className="select-wrapper mb-5">
           <label>typ brány</label>
-          <select name="gateType"  onChange={this.handleChange}>
+          <select name="gateType" onChange={this.handleChange}>
             <option defaultValue="nevybrata">- Vyberte si typ brány -</option>
             <option value="Segmentová">Segmentová</option>
             <option value="Roletová">Roletová</option>
@@ -132,7 +139,7 @@ class InputForm extends React.Component {
 
         <div className="select-wrapper mb-5">
           <label>farba</label>
-          <select name="gateColor"  onChange={this.handleChange}>
+          <select name="gateColor" onChange={this.handleChange}>
             <option defaultValue="nevybrata">- Vyberte si farbu -</option>
             <option value="Biela RAL 9016">Biela RAL 9016</option>
             <option value="Hnedá RAL 8014">Hnedá RAL 8014</option>
@@ -156,35 +163,44 @@ class InputForm extends React.Component {
         </div>
 
         <div className="field">
-          <label className={fenceGateType === "brana dvojkridlova" ? "form-label form-label-checked" : "form-label"}>        
-        <input type="radio" 
-                  name={"fenceGateType"}
-                  value={'brana dvojkridlova'} 
-                  checked={fenceGateType === "brana dvojkridlova"} 
-                  onChange={this.handleChange} />
-          Brána Dvojkrídlová</label>
+          <label className={fenceGateType === 'brana dvojkridlova' ? 'form-label form-label-checked' : 'form-label'}>
+            <input
+              type="radio"
+              name="fenceGateType"
+              value="brana dvojkridlova"
+              checked={fenceGateType === 'brana dvojkridlova'}
+              onChange={this.handleChange}
+            />
+          Brána Dvojkrídlová
+          </label>
         </div>
 
 
         <div className="field">
-          <label className={fenceGateType === "brana samonosta posuvna" ? "form-label form-label-checked" : "form-label"}>        
-        <input type="radio" 
-                  name={"fenceGateType"}
-                  value={'brana samonosta posuvna'} 
-                  checked={fenceGateType === "brana samonosta posuvna"} 
-                  onChange={this.handleChange} />
-          Brána samonostná posuvná</label>
+          <label className={fenceGateType === 'brana samonosta posuvna' ? 'form-label form-label-checked' : 'form-label'}>
+            <input
+              type="radio"
+              name="fenceGateType"
+              value="brana samonosta posuvna"
+              checked={fenceGateType === 'brana samonosta posuvna'}
+              onChange={this.handleChange}
+            />
+          Brána samonostná posuvná
+          </label>
         </div>
 
 
         <div className="field">
-          <label className={fenceGateType === "brana samonosta posuvna bez vyplne" ? "form-label form-label-checked" : "form-label"}>        
-        <input type="radio" 
-                  name={"fenceGateType"}
-                  value={'brana samonosta posuvna bez vyplne'} 
-                  checked={fenceGateType === "brana samonosta posuvna bez vyplne"} 
-                  onChange={this.handleChange} />
-          Brána samonostná posuvná bez výplne</label>
+          <label className={fenceGateType === 'brana samonosta posuvna bez vyplne' ? 'form-label form-label-checked' : 'form-label'}>
+            <input
+              type="radio"
+              name="fenceGateType"
+              value="brana samonosta posuvna bez vyplne"
+              checked={fenceGateType === 'brana samonosta posuvna bez vyplne'}
+              onChange={this.handleChange}
+            />
+          Brána samonostná posuvná bez výplne
+          </label>
         </div>
         {ovladanie()}
       </div>
@@ -195,32 +211,36 @@ class InputForm extends React.Component {
       <section id="contact">
         <div className="inner">
           <section>
-            <form onSubmit={this.handleSubmit} name={"contact"}>
-            <input type="hidden" name="form-name" value="contact" />
-            <div className="field">
+            <form onSubmit={this.handleSubmit} name="contact">
+              <input type="hidden" name="form-name" value="contact" />
+              <div className="field">
                 <label>Cenová ponuka pre</label>
               </div>
               <div className="col-4">
                 <div className="field half">
-          <label className={offer === "garazova brana" ? "form-label form-label-checked" : "form-label"}>                
-                  <input type="radio" 
-                  name={'offer'} 
-                  value={'garazova brana'}
-                  checked={offer === "garazova brana"} 
-                  onChange={this.handleChange} />
-                <strong>Garažovú Bránu</strong>
-                </label>
+                  <label className={offer === 'garazova brana' ? 'form-label form-label-checked' : 'form-label'}>
+                    <input
+                      type="radio"
+                      name="offer"
+                      value="garazova brana"
+                      checked={offer === 'garazova brana'}
+                      onChange={this.handleChange}
+                    />
+                    <strong>Garažovú Bránu</strong>
+                  </label>
                 </div>
               </div>
               <div className="col-4">
                 <div className="field half">
-          <label className={offer === "oplotenie" ? "form-label form-label-checked" : "form-label"}>                  
-                  <input type="radio" 
-                  name={'offer'} 
-                  value={"oplotenie"}
-                  checked={offer === "oplotenie"} 
-                  onChange={this.handleChange} />
-                  <strong>Oplotenie</strong>
+                  <label className={offer === 'oplotenie' ? 'form-label form-label-checked' : 'form-label'}>
+                    <input
+                      type="radio"
+                      name="offer"
+                      value="oplotenie"
+                      checked={offer === 'oplotenie'}
+                      onChange={this.handleChange}
+                    />
+                    <strong>Oplotenie</strong>
                   </label>
                 </div>
               </div>
@@ -228,68 +248,84 @@ class InputForm extends React.Component {
                 <label>
                 Meno a Priezvisko
                 </label>
-                <input 
-                type="text" 
-                name="name" 
-                value={name} 
-                onChange={this.handleChange} 
+                <input
+                  type="text"
+                  name="name"
+                  value={name}
+                  onChange={this.handleChange}
                 />
               </div>
               <div className="field">
                 <label>Telefón</label>
-                <input type="text" 
-                name="phone" 
-                value={phone} onChange={this.handleChange} />
-                
+                <input
+                  type="text"
+                  name="phone"
+                  value={phone}
+                  onChange={this.handleChange}
+                />
+
               </div>
               <div className="field">
                 <label>Email</label>
-                <input type="text" 
-                name="email" 
-                value={email} onChange={this.handleChange} />
-                
+                <input
+                  type="text"
+                  name="email"
+                  value={email}
+                  onChange={this.handleChange}
+                />
+
               </div>
               <div className="field">
                 <label>Miesto montáže</label>
-                <input type="text" 
-                name="place" 
-                value={place}
-                onChange={this.handleChange} />
-                
+                <input
+                  type="text"
+                  name="place"
+                  value={place}
+                  onChange={this.handleChange}
+                />
+
               </div>
 
-             
 
-              {offer === "garazova brana" && brana() }	
-               {offer === "oplotenie" &&  oplotenie() }
-               
+              {offer === 'garazova brana' && brana() }
+              {offer === 'oplotenie' && oplotenie() }
+
               <div className="field">
                 <label htmlFor="message">Komentár</label>
-                <textarea name="message" 
-                value={message} onChange={this.handleChange}
-                rows="6" placeholder={offer === "garazova brana" ? "Do komentára uveďte prosím vzor" : "Do komentára uveďte prosím farbu a vzor"} />
+                <textarea
+                  name="message"
+                  value={message}
+                  onChange={this.handleChange}
+                  rows="6"
+                  placeholder={offer === 'garazova brana' ? 'Do komentára uveďte prosím vzor' : 'Do komentára uveďte prosím farbu a vzor'}
+                />
               </div>
               <div>
                 <p>
-Kompletnú ponuku nájdete na 
+Kompletnú ponuku nájdete na
                   <a href="https://www.wisniowski.pl/cz" target="_blank"><strong> https://www.wisniowski.pl/cz</strong></a>
                 </p>
-                
-          <label className={this.state.agree ? "form-label form-label-checked" : "form-label"}>                
-            <input type="checkbox" 
-            
-            defaultChecked={this.state.agree}
-            onChange={() => this.setState({ agree: !this.state.agree })} />
-            Súhlasím so spracovaním osobných údajov v zmysle zákona o ochrane osobných údajov č. 18/2018 Z. z. v znení neskorších predpisov</label>
-  
+
+                <label className={this.state.agree ? 'form-label form-label-checked' : 'form-label'}>
+                  <input
+                    type="checkbox"
+
+                    defaultChecked={this.state.agree}
+                    onChange={() => this.setState({ agree: !this.state.agree })}
+                  />
+            Súhlasím so spracovaním osobných údajov v zmysle zákona o ochrane osobných údajov č. 18/2018 Z. z. v znení neskorších predpisov
+                </label>
+
               </div>
-              {this.state.agree && <p>
-Viac informácií nájdete v sekcii  
-                  <a href="/spracovanie-osobnych-udajov" target="_blank"><strong> spracovanie osobných údajov </strong></a>
-                </p>}
+              {this.state.agree && (
+              <p>
+Viac informácií nájdete v sekcii
+                <a href="/spracovanie-osobnych-udajov" target="_blank"><strong> spracovanie osobných údajov </strong></a>
+              </p>
+              )}
 
               <ul className="actions">
-                <li><input type="submit" value="odoslať"/></li>
+                <li><input type="submit" value="odoslať" /></li>
               </ul>
             </form>
           </section>
@@ -298,8 +334,11 @@ Viac informácií nájdete v sekcii
               <div className="contact-method">
                 <span className="icon alt fa-envelope" />
                 <h3>Email</h3>
-                <span>info@transferrum.sk <br/>
-                  martin@transferrum.sk</span>
+                <span>
+info@transferrum.sk
+                  <br />
+                  martin@transferrum.sk
+                </span>
               </div>
             </section>
             <section>
@@ -325,11 +364,21 @@ Viac informácií nájdete v sekcii
                 <h3>Marián Kaleta – Transferrum</h3>
                 <span>
 
-Budovateľská 18 <br/>
-064 01 Stará Ľubovňa <br/>
-IČO: 30614082 <br/>
-DIČ: 1020762171 <br/>
-IČ DPH: SK1020762171 <br/>
+Budovateľská 18
+                  {' '}
+                  <br />
+064 01 Stará Ľubovňa
+                  {' '}
+                  <br />
+IČO: 30614082
+                  {' '}
+                  <br />
+DIČ: 1020762171
+                  {' '}
+                  <br />
+IČ DPH: SK1020762171
+                  {' '}
+                  <br />
 číslo živ. reg.: 710-1500
                 </span>
               </div>
