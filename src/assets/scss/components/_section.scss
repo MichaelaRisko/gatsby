@@ -13,17 +13,21 @@
 	}
 
 	.invert {
+		padding: 1rem;
 		background-color: _palette(fg-bold);
 
 		h2 {
+			padding: 1rem;
+			padding-left: 0;
 			color: _palette(bg);
 		}
 
-		@include breakpoint(small) {
-			h2 {
-				padding-bottom: 3rem;
-			}
+		&.box-row {
+			
+
+			
 		}
+
 
 	}
 

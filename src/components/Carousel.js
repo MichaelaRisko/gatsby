@@ -89,9 +89,7 @@ export default class Carousel extends Component {
           {bannerSlide(gallery21)}
           {bannerSlide(gallery14)}
           {bannerSlide(gallery07)}
-          {bannerSlide(gallery21)}
           {bannerSlide(gallery29)}
-          {bannerSlide(gallery16)}
           {bannerSlide(gallery11)}
         </Slider>
       </div>

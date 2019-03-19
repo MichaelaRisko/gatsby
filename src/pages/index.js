@@ -202,7 +202,7 @@ Závesné</p>
           </section>
 
           <section id="price" className="invert">
-            <div className="inner box-row" style={{ padding: '4rem 0' }}>
+            <div className="box-row" style={{ padding: '4rem 0' }}>
               <h2 style={{ margin: '0' }}>Kontaktujte nás pre Vašu cenovú ponuku</h2>
               <Link to="/cenova-ponuka" className="button special">Kontakt</Link>
 

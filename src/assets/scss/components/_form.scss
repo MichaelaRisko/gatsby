@@ -60,6 +60,8 @@
 		}
 	}
 
+	/*
+	
 	label {
 		color: _palette(fg-bold);
 		display: block;
@@ -138,17 +140,102 @@
 	}
 
 	input[type="checkbox"],
-	input[type="radio"], {
-		@include vendor('appearance', 'none');
-		display: block;
-		float: left;
-		margin-right: -2em;
-		opacity: 0;
-		width: 1em;
-		z-index: -1;
+		input[type="radio"] {
+			@include vendor('appearance', 'none');
+			display: block;
+			float: left;
+			margin-right: -2em;
+			opacity: 0;
+			width: 1em;
+			z-index: -1;
+	}
 
-		& + label {
-			@include icon;
+	label {
+		@include icon;
+		color: _palette(fg);
+		cursor: pointer;
+		display: inline-block;
+		font-weight: _font(weight);
+		padding-left: (_size(element-height) * 0.6) + 1em;
+		padding-right: 0.75em;
+		position: relative;
+
+		&:before {
+			background: _palette(border-bg);
+			content: '';
+			display: inline-block;
+			height: (_size(element-height) * 0.6);
+			left: 0;
+			letter-spacing: 0;
+			line-height: (_size(element-height) * 0.575);
+			position: absolute;
+			text-align: center;
+			top: 0;
+			width: (_size(element-height) * 0.6);
+
+			input[type="checkbox"],
+			input[type="radio"] { 
+				&:checked {
+					
+						background: _palette(fg-bold);
+						border-color: _palette(highlight);
+						content: '\f00c';
+						color: _palette(bg);
+				
+				}
+
+				&:focus {
+						box-shadow: 0 0 0 2px _palette(highlight);
+				}
+			}
+		}
+	}
+
+	label:before {
+		input[type="radio"] {
+			border-radius: 100%;
+		}
+	}
+	
+	*/
+
+
+	.select-wrapper {
+		@include icon;
+		display: block;
+		position: relative;
+
+		&:before {
+			color: _palette(border);
+			content: '\f078';
+			display: block;
+			height: _size(element-height);
+			line-height: _size(element-height);
+			pointer-events: none;
+			position: absolute;
+			right: 0;
+			text-align: center;
+			top: 0;
+			width: _size(element-height);
+		}
+
+		select::-ms-expand {
+			display: none;
+		}
+	}
+
+	label {
+		color: _palette(fg-bold);
+		display: block;
+		font-size: 0.8em;
+		font-weight: _font(weight-bold);
+		letter-spacing: _font(letter-spacing-alt);
+		margin: 0 0 (_size(element-margin) * 0.5) 0;
+		text-transform: uppercase;
+	}
+
+	.form-label {
+		@include icon;
 			color: _palette(fg);
 			cursor: pointer;
 			display: inline-block;
@@ -169,38 +256,74 @@
 				text-align: center;
 				top: 0;
 				width: (_size(element-height) * 0.6);
-			}
-		}
-
-		&:checked + label {
-			&:before {
-				background: _palette(fg-bold);
-				border-color: _palette(highlight);
-				content: '\f00c';
-				color: _palette(bg);
-			}
-		}
-
-		&:focus + label {
-			&:before {
-				box-shadow: 0 0 0 2px _palette(highlight);
-			}
-		}
-	}
-
-	input[type="checkbox"] {
-		& + label {
-			&:before {
-			}
-		}
-	}
-
-	input[type="radio"] {
-		& + label {
-			&:before {
 				border-radius: 100%;
 			}
+	}
+
+
+	.form-label-checked{
+		&:before {
+			background: _palette(fg-bold);
+			border-color: _palette(highlight);
+			content: '\f00c';
+			color: _palette(bg);
 		}
+
+	}
+
+	input[type="checkbox"],
+	input[type="radio"] {
+		@include vendor('appearance', 'none');
+		display: block;
+		float: left;
+		margin-right: -2em;
+		opacity: 0;
+		width: 1em;
+		z-index: -1;
+	}
+
+	
+	input[type="text"],
+	input[type="password"],
+	input[type="email"],
+	input[type="tel"],
+	input[type="search"],
+	input[type="url"],
+	select,
+	textarea {
+		@include vendor('appearance', 'none');
+		background: _palette(border-bg);
+		border: none;
+		border-radius: 0;
+		color: inherit;
+		display: block;
+		outline: 0;
+		padding: 0 1em;
+		text-decoration: none;
+		width: 100%;
+
+		&:invalid {
+			box-shadow: none;
+		}
+
+		&:focus {
+			border-color: _palette(highlight);
+			box-shadow: 0 0 0 2px _palette(highlight);
+		}
+	}
+
+	input[type="text"],
+	input[type="password"],
+	input[type="email"],
+	input[type="tel"],
+	input[type="search"],
+	input[type="url"],
+	select {
+		height: _size(element-height);
+	}
+
+	textarea {
+		padding: 0.75em 1em;
 	}
 
 	::-webkit-input-placeholder {
@@ -226,4 +349,4 @@
 	.formerize-placeholder {
 		color: _palette(fg-light) !important;
 		opacity: 1.0;
-	}
+		}
