@@ -46,193 +46,6 @@ class InputForm extends React.Component {
     
     const { name, email, phone, place, offer, sizeHeight, sizeWidth, control, fenceGateType, message, agree } = this.state;
 
-    const ovladanie1 = (
-      <div>
-        <div className="field"><label>Typ ovládania</label></div>
-        <div className="col-4">
-          <div className="field half">
-          <label className={control === 'rucne' ? "form-label form-label-checked" : "form-label"}>
-          <input type="radio" 
-                  name={'control'}
-                  value={"rucne"}
-                  checked={control === "rucne"} 
-                  onChange={this.handleChange} />
-             Ručné</label>
-          </div>
-        </div>
-        <div className="col-4">
-          <div className="field half  ">
-          <label className={control === 'automaticke' ? "form-label form-label-checked" : "form-label"}>
-          <input type="radio"
-                  name={'control'}
-                  value={'automaticke'} 
-                  checked={control === 'automaticke'} 
-                  onChange={this.handleChange} />
-           Automatické</label>
-          </div>
-        </div>
-      </div>
-    );
-
-    const rozmer1 = (
-      <div>
-      <div className="field">
-                <label>Rozmery {this.state.offer === "garazova brana" ? 'brány' : 'oplotenia'}</label>
-              </div>
-              <div className="field ">
-                <label>Šírka(m)</label>
-                <input type="text" name="sizeWidth" value={sizeWidth} onChange={this.handleChange}/>
-              </div>
-              <div className="field ">
-                <label>Výška(m)</label>
-                <input type="text" name="sizeHeight" value={sizeHeight} onChange={this.handleChange}/>
-              </div>
-      </div>
-    )
-
-
-    const brana1 = (
-      <div>
-        <div className="field">
-                <label>Rozmery {this.state.offer === "garazova brana" ? 'brány' : 'oplotenia'}</label>
-              </div>
-              <div className="field ">
-                <label>Šírka(m)</label>
-                <input type="text" name="sizeWidth" value={sizeWidth} onChange={this.handleChange}/>
-              </div>
-              <div className="field ">
-                <label>Výška(m)</label>
-                <input type="text" name="sizeHeight" value={sizeHeight} onChange={this.handleChange}/>
-              </div>
-        <div className="select-wrapper mb-5">
-          <label>typ brány</label>
-          <select name="gateType"  onChange={this.handleChange}>
-            <option defaultValue="nevybrata">- Vyberte si typ brány -</option>
-            <option value="Segmentová">Segmentová</option>
-            <option value="Roletová">Roletová</option>
-            <option value="Dvojkrídlová zateplená">Dvojkrídlová zateplená</option>
-            <option value="Dvojkrídlová nezateplená">Dvojkrídlová nezateplená</option>
-            <option value="Výklopná zateplená">Výklopná zateplená</option>
-            <option value="Výklopná nezateplená">Výklopná nezateplená</option>
-            <option value="Výklopná bez výplne">Výklopná bez výplne</option>
-          </select>
-        </div>
-
-        <div className="select-wrapper mb-5">
-          <label>farba</label>
-          <select name="gateColor"  onChange={this.handleChange}>
-            <option defaultValue="nevybrata">- Vyberte si farbu -</option>
-            <option value="Biela RAL 9016">Biela RAL 9016</option>
-            <option value="Hnedá RAL 8014">Hnedá RAL 8014</option>
-            <option value="Sivá RAL 7016">Sivá RAL 7016</option>
-            <option value="Zlatý dub">Zlatý dub</option>
-            <option value="Orech">Orech</option>
-            <option value="Celá paleta RAL a motívy podobné drevu">Celá paleta RAL a motívy podobné drevu</option>
-
-          </select>
-        </div>
-        
-        <div className="field"><label>Typ ovládania</label></div>
-        <div className="col-4">
-          <div className="field half">
-          <label className={control === 'rucne' ? "form-label form-label-checked" : "form-label"}>
-          <input type="radio" 
-                  name={'control'}
-                  value={"rucne"}
-                  checked={control === "rucne"} 
-                  onChange={this.handleChange} />
-             Ručné</label>
-          </div>
-        </div>
-        <div className="col-4">
-          <div className="field half  ">
-          <label className={control === 'automaticke' ? "form-label form-label-checked" : "form-label"}>
-          <input type="radio"
-                  name={'control'}
-                  value={'automaticke'} 
-                  checked={control === 'automaticke'} 
-                  onChange={this.handleChange} />
-           Automatické</label>
-          </div>
-        </div>
-      </div>
-    );
-
-    const oplotenie1 = (
-      <div>
-        <div className="field">
-                <label>Rozmery {this.state.offer === "garazova brana" ? 'brány' : 'oplotenia'}</label>
-              </div>
-              <div className="field ">
-                <label>Šírka(m)</label>
-                <input type="text" name="sizeWidth" value={sizeWidth} onChange={this.handleChange}/>
-              </div>
-              <div className="field ">
-                <label>Výška(m)</label>
-                <input type="text" name="sizeHeight" value={sizeHeight} onChange={this.handleChange}/>
-              </div>
-        <div className="field">
-          <label>Typ brány pri oplotení</label>
-        </div>
-
-        <div className="field">
-          <label className={fenceGateType === "brana dvojkridlova" ? "form-label form-label-checked" : "form-label"}>        
-        <input type="radio" 
-                  name={"fenceGateType"}
-                  value={'brana dvojkridlova'} 
-                  checked={fenceGateType === "brana dvojkridlova"} 
-                  onChange={this.handleChange} />
-          Brána Dvojkrídlová</label>
-        </div>
-
-
-        <div className="field">
-          <label className={fenceGateType === "brana samonosta posuvna" ? "form-label form-label-checked" : "form-label"}>        
-        <input type="radio" 
-                  name={"fenceGateType"}
-                  value={'brana samonosta posuvna'} 
-                  checked={fenceGateType === "brana samonosta posuvna"} 
-                  onChange={this.handleChange} />
-          Brána samonostná posuvná</label>
-        </div>
-
-
-        <div className="field">
-          <label className={fenceGateType === "brana samonosta posuvna bez vyplne" ? "form-label form-label-checked" : "form-label"}>        
-        <input type="radio" 
-                  name={"fenceGateType"}
-                  value={'brana samonosta posuvna bez vyplne'} 
-                  checked={fenceGateType === "brana samonosta posuvna bez vyplne"} 
-                  onChange={this.handleChange} />
-          Brána samonostná posuvná bez výplne</label>
-        </div>
-        
-        <div className="field"><label>Typ ovládania</label></div>
-        <div className="col-4">
-          <div className="field half">
-          <label className={control === 'rucne' ? "form-label form-label-checked" : "form-label"}>
-          <input type="radio" 
-                  name={'control'}
-                  value={"rucne"}
-                  checked={control === "rucne"} 
-                  onChange={this.handleChange} />
-             Ručné</label>
-          </div>
-        </div>
-        <div className="col-4">
-          <div className="field half  ">
-          <label className={control === 'automaticke' ? "form-label form-label-checked" : "form-label"}>
-          <input type="radio"
-                  name={'control'}
-                  value={'automaticke'} 
-                  checked={control === 'automaticke'} 
-                  onChange={this.handleChange} />
-           Automatické</label>
-          </div>
-        </div>
-      </div>
-
-    );
 
     return(
       <section id="contact">
@@ -315,10 +128,11 @@ class InputForm extends React.Component {
 
              
 
+              <div className={offer != "garazova brana" ? "form-hidden" : null}>
              
-            <div>
+            
             <div className="field">
-                    <label>Rozmery {this.state.offer === "garazova brana" ? 'brány' : 'oplotenia'}</label>
+                    <label>Rozmery brány</label>
                   </div>
                   <div className="field ">
                     <label>Šírka(m)</label>
@@ -383,9 +197,9 @@ class InputForm extends React.Component {
             
            
               
-              <div>
+          <div className={offer != "oplotenie" ? 'form-hidden' : null}>
         <div className="field">
-                <label>Rozmery {this.state.offer === "garazova brana" ? 'brány' : 'oplotenia'}</label>
+                <label>Rozmery oplotenia</label>
               </div>
               <div className="field ">
                 <label>Šírka(m)</label>
