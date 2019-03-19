@@ -269,6 +269,7 @@ Kompletnú ponuku nájdete na
           <label className={this.state.agree ? "form-label form-label-checked" : "form-label"}>                
             <input type="checkbox" 
             name="agree"
+            value={this.state.agree}
             defaultChecked={this.state.agree}
             onChange={() => this.setState({ agree: !this.state.agree })} />
             Súhlasím so spracovaním osobných údajov v zmysle zákona o ochrane osobných údajov č. 18/2018 Z. z. v znení neskorších predpisov</label>
