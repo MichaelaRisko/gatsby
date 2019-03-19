@@ -196,6 +196,7 @@ class InputForm extends React.Component {
         <div className="inner">
           <section>
             <form onSubmit={this.handleSubmit} name={"contact"}>
+            <input type="hidden" name="form-name" value="contact" />
             <div className="field">
                 <label>Cenová ponuka pre</label>
               </div>
