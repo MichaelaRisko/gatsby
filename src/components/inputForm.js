@@ -187,8 +187,7 @@ class InputForm extends React.Component {
         <div>Thank you for contacting us!</div>
       }
       {!loading && !success &&
-            <form name={"contact"}>
-            <input type="hidden" name="form-name" value="contact" />
+      <div>
             <div className="field">
                 <label>Cenová ponuka pre</label>
               </div>
@@ -283,7 +282,7 @@ Viac informácií nájdete v sekcii
               <ul className="actions">
                 <li><input type="submit" value="odoslať"/></li>
               </ul>
-            </form>
+            </div>
              }
              </div>
            )}
