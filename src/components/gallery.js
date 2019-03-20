@@ -33,8 +33,17 @@ import img006 from '../assets/images/gallery/006.jpg';
 import img007 from '../assets/images/gallery/007.jpg';
 import img008 from '../assets/images/gallery/008.jpg';
 import img009 from '../assets/images/gallery/009.jpg';
+import img010 from '../assets/images/gallery/010.jpg';
+import img011 from '../assets/images/gallery/011.jpg';
+import img012 from '../assets/images/gallery/012.jpg';
+import img013 from '../assets/images/gallery/013.jpg';
+import img014 from '../assets/images/gallery/014.jpg';
+import img015 from '../assets/images/gallery/015.jpg';
 
 const mobil = [
+  { src: img013, width: 3, height: 2 },
+  { src: img014, width: 3, height: 2 },
+  { src: img010, width: 3, height: 2 },
   { src: img001, width: 3, height: 2 },
   { src: img002, width: 3, height: 2 },
   { src: img003, width: 3, height: 2 },
@@ -44,6 +53,7 @@ const mobil = [
   { src: img006, width: 2, height: 2 },
   { src: img007, width: 4, height: 2 },
   { src: img005, width: 2, height: 2 },
+  { src: img015, width: 3, height: 2 }
 ];
 
 const photos = [

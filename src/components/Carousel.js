@@ -8,7 +8,9 @@ import gallery07 from '../assets/images/gallery/catalog/gallery07.jpg';
 import gallery14 from '../assets/images/gallery/catalog/gallery14.jpg';
 import gallery21 from '../assets/images/gallery/catalog/gallery21.jpg';
 import gallery29 from '../assets/images/gallery/catalog/gallery29.jpg';
-import img03 from '../assets/images/gallery/003.jpg';
+import img003 from '../assets/images/gallery/003.jpg';
+import img013 from '../assets/images/gallery/013.jpg';
+
 
 
 function SampleNextArrow(props) {
@@ -55,8 +57,8 @@ export default class Carousel extends Component {
       slidesToShow: 1,
       slidesToScroll: 1,
       autoplay: true,
-      speed: 3000,
-      autoplaySpeed: 3000,
+      speed: 5000,
+      autoplaySpeed: 5000,
       nextArrow: <SampleNextArrow />,
       prevArrow: <SamplePrevArrow />,
     };
@@ -84,12 +86,11 @@ export default class Carousel extends Component {
     return (
       <div className="carousel no-padding">
         <Slider {...settings}>
-          {bannerSlide(img03)}
+          {bannerSlide(img003)}
           {bannerSlide(gallery21)}
+          {bannerSlide(img013)}
           {bannerSlide(gallery14)}
-          {bannerSlide(gallery07)}
           {bannerSlide(gallery29)}
-          {bannerSlide(gallery11)}
         </Slider>
       </div>
 

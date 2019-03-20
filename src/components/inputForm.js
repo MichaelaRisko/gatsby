@@ -301,8 +301,8 @@ class InputForm extends React.Component {
               </label>
             </div>
           </div>
+      
         </div>
-
 
         <div className="field">
           <label htmlFor="message">Komentár</label>
@@ -320,7 +320,7 @@ Kompletnú ponuku nájdete na
             <a href="https://www.wisniowski.pl/cz" target="_blank" rel="noopener noreferrer"><strong> https://www.wisniowski.pl/cz</strong></a>
           </p>
 
-          <label className={this.state.agree ? 'form-label form-label-checked' : 'form-label'}>
+          <label className={this.state.agree ? 'form-label form-label-checked' : 'form-label'} style={{paddingBottom: '2rem'}}>
             <input
               type="checkbox"
               name="agree"
